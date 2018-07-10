@@ -9,7 +9,7 @@ namespace ImGuiImpl
 {
     IMGUI_API bool        Init(SDL_Window* window);
     IMGUI_API void        Shutdown();
-    IMGUI_API void        NewFrame(SDL_Window* window);
+    IMGUI_API void        NewFrame(SDL_Window* window, float dt);
     IMGUI_API bool        ProcessEvent(SDL_Event* event); 
     IMGUI_API void        RenderDrawData(ImDrawData* draw_data);
 

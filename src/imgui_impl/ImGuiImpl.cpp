@@ -352,7 +352,7 @@ namespace ImGuiImpl
         //ImGui::Shutdown();
     }
 
-    void NewFrame(SDL_Window* window)
+    void NewFrame(SDL_Window* window, float dt)
     {
         if (!g_FontTexture)
         {
@@ -370,10 +370,7 @@ namespace ImGuiImpl
         io.DisplayFramebufferScale = ImVec2(w > 0 ? ((float)display_w / w) : 0, h > 0 ? ((float)display_h / h) : 0);
 
         // Setup time step
-        Uint32	time = SDL_GetTicks();
-        double current_time = time / 1000.0;
-        io.DeltaTime = g_Time > 0.0 ? (float)(current_time - g_Time) : (float)(1.0f / 60.0f);
-        g_Time = current_time;
+        io.DeltaTime = dt;
 
         // Setup inputs
         // (we already got mouse wheel, keyboard keys & characters from SDL_PollEvent())

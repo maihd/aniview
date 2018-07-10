@@ -53,6 +53,7 @@ int main(int argc, char* argv[])
     (void)io;
 
     Timer timer;
+    float deltaTime = 0.0f;
     SDL_Event event;
 
     while (true)
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
 
         glClear(GL_COLOR_BUFFER_BIT);
         
-        ImGuiImpl::NewFrame(window);
+        ImGuiImpl::NewFrame(window, deltaTime);
         ImGui::Button("Click me!");
         ImGui::Render();
         ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
@@ -86,6 +87,8 @@ int main(int argc, char* argv[])
 
         Timer::EndFrame(timer);
         Timer::Sleep(timer);
+
+        deltaTime = (float)Timer::Seconds(timer);
     }
     
     SDL_GL_DeleteContext(glcontext);

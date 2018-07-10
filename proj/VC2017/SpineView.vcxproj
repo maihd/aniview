@@ -25,6 +25,38 @@
     <ClCompile Include="..\..\src\imgui_impl\ImGuiImpl.cpp" />
     <ClCompile Include="..\..\src\Logger.cpp" />
     <ClCompile Include="..\..\src\Main.cpp" />
+    <ClCompile Include="..\..\src\spine\Animation.c" />
+    <ClCompile Include="..\..\src\spine\AnimationState.c" />
+    <ClCompile Include="..\..\src\spine\AnimationStateData.c" />
+    <ClCompile Include="..\..\src\spine\Atlas.c" />
+    <ClCompile Include="..\..\src\spine\AtlasAttachmentLoader.c" />
+    <ClCompile Include="..\..\src\spine\Attachment.c" />
+    <ClCompile Include="..\..\src\spine\AttachmentLoader.c" />
+    <ClCompile Include="..\..\src\spine\Bone.c" />
+    <ClCompile Include="..\..\src\spine\BoneData.c" />
+    <ClCompile Include="..\..\src\spine\BoundingBoxAttachment.c" />
+    <ClCompile Include="..\..\src\spine\Event.c" />
+    <ClCompile Include="..\..\src\spine\EventData.c" />
+    <ClCompile Include="..\..\src\spine\extension.c" />
+    <ClCompile Include="..\..\src\spine\IkConstraint.c" />
+    <ClCompile Include="..\..\src\spine\IkConstraintData.c" />
+    <ClCompile Include="..\..\src\spine\Json.c" />
+    <ClCompile Include="..\..\src\spine\MeshAttachment.c" />
+    <ClCompile Include="..\..\src\spine\PathAttachment.c" />
+    <ClCompile Include="..\..\src\spine\PathConstraint.c" />
+    <ClCompile Include="..\..\src\spine\PathConstraintData.c" />
+    <ClCompile Include="..\..\src\spine\RegionAttachment.c" />
+    <ClCompile Include="..\..\src\spine\Skeleton.c" />
+    <ClCompile Include="..\..\src\spine\SkeletonBinary.c" />
+    <ClCompile Include="..\..\src\spine\SkeletonBounds.c" />
+    <ClCompile Include="..\..\src\spine\SkeletonData.c" />
+    <ClCompile Include="..\..\src\spine\SkeletonJson.c" />
+    <ClCompile Include="..\..\src\spine\Skin.c" />
+    <ClCompile Include="..\..\src\spine\Slot.c" />
+    <ClCompile Include="..\..\src\spine\SlotData.c" />
+    <ClCompile Include="..\..\src\spine\TransformConstraint.c" />
+    <ClCompile Include="..\..\src\spine\TransformConstraintData.c" />
+    <ClCompile Include="..\..\src\spine\VertexAttachment.c" />
     <ClCompile Include="..\..\src\System.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +81,40 @@
     <ClInclude Include="..\..\src\memwise\table.h" />
     <ClInclude Include="..\..\src\memwise\table.hpp" />
     <ClInclude Include="..\..\src\memwise\tempo.h" />
+    <ClInclude Include="..\..\src\spine\Animation.h" />
+    <ClInclude Include="..\..\src\spine\AnimationState.h" />
+    <ClInclude Include="..\..\src\spine\AnimationStateData.h" />
+    <ClInclude Include="..\..\src\spine\Atlas.h" />
+    <ClInclude Include="..\..\src\spine\AtlasAttachmentLoader.h" />
+    <ClInclude Include="..\..\src\spine\Attachment.h" />
+    <ClInclude Include="..\..\src\spine\AttachmentLoader.h" />
+    <ClInclude Include="..\..\src\spine\Bone.h" />
+    <ClInclude Include="..\..\src\spine\BoneData.h" />
+    <ClInclude Include="..\..\src\spine\BoundingBoxAttachment.h" />
+    <ClInclude Include="..\..\src\spine\Event.h" />
+    <ClInclude Include="..\..\src\spine\EventData.h" />
+    <ClInclude Include="..\..\src\spine\extension.h" />
+    <ClInclude Include="..\..\src\spine\IkConstraint.h" />
+    <ClInclude Include="..\..\src\spine\IkConstraintData.h" />
+    <ClInclude Include="..\..\src\spine\Json.h" />
+    <ClInclude Include="..\..\src\spine\kvec.h" />
+    <ClInclude Include="..\..\src\spine\MeshAttachment.h" />
+    <ClInclude Include="..\..\src\spine\PathAttachment.h" />
+    <ClInclude Include="..\..\src\spine\PathConstraint.h" />
+    <ClInclude Include="..\..\src\spine\PathConstraintData.h" />
+    <ClInclude Include="..\..\src\spine\RegionAttachment.h" />
+    <ClInclude Include="..\..\src\spine\Skeleton.h" />
+    <ClInclude Include="..\..\src\spine\SkeletonBinary.h" />
+    <ClInclude Include="..\..\src\spine\SkeletonBounds.h" />
+    <ClInclude Include="..\..\src\spine\SkeletonData.h" />
+    <ClInclude Include="..\..\src\spine\SkeletonJson.h" />
+    <ClInclude Include="..\..\src\spine\Skin.h" />
+    <ClInclude Include="..\..\src\spine\Slot.h" />
+    <ClInclude Include="..\..\src\spine\SlotData.h" />
+    <ClInclude Include="..\..\src\spine\spine.h" />
+    <ClInclude Include="..\..\src\spine\TransformConstraint.h" />
+    <ClInclude Include="..\..\src\spine\TransformConstraintData.h" />
+    <ClInclude Include="..\..\src\spine\VertexAttachment.h" />
     <ClInclude Include="..\..\src\System.h" />
     <ClInclude Include="..\..\src\Timer.h" />
     <ClInclude Include="..\..\src\vmath\vmath.h" />
@@ -156,7 +222,6 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
