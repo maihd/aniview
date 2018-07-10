@@ -10,8 +10,13 @@
 
 #include "System.h"
 
-#include "imgui\imgui.h"
-#include "imgui_impl\ImGuiImpl.h"
+#include "imgui/imgui.h"
+#include "imgui_impl/ImGuiImpl.h"
+
+#define MEMBUF_IMPL
+#include "memwise/membuf.h"
+
+#include "spine/spine.h"
 
 #undef main
 int main(int argc, char* argv[])
@@ -32,8 +37,8 @@ int main(int argc, char* argv[])
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-    SDL_GLContext glcontext = SDL_GL_CreateContext(window);
-    if (!glcontext)
+    SDL_GLContext glContext = SDL_GL_CreateContext(window);
+    if (!glContext)
     {
         System::Error("SDL_GL_CreateContext(): %s", SDL_GetError());
         return 1;
@@ -45,6 +50,16 @@ int main(int argc, char* argv[])
         System::Error("glewInit(): %s", glewGetErrorString(glewStatus));
         return 1;
     }
+
+    spAtlas* atlas = spAtlas_createFromFile("../../res/spineboy.atlas", NULL);
+    spAtlasAttachmentLoader* loader = spAtlasAttachmentLoader_create(atlas);
+
+    spSkeletonJson* skeletonJson = spSkeletonJson_createWithLoader((spAttachmentLoader*)loader);
+    spSkeletonData* skeletonData = spSkeletonJson_readSkeletonDataFile(skeletonJson, "../../res/spineboy.json");
+    spSkeleton* skeleton = spSkeleton_create(skeletonData);
+
+    spAnimationStateData* spineAnimData = spAnimationStateData_create(skeleton->data);
+    spAnimationState* spineAnimState = spAnimationState_create(spineAnimData);
 
     ImGuiContext* context = ImGui::CreateContext();
     (void)context;
@@ -79,7 +94,9 @@ int main(int argc, char* argv[])
         glClear(GL_COLOR_BUFFER_BIT);
         
         ImGuiImpl::NewFrame(window, deltaTime);
+        
         ImGui::Button("Click me!");
+        
         ImGui::Render();
         ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
 
@@ -91,7 +108,7 @@ int main(int argc, char* argv[])
         deltaTime = (float)Timer::Seconds(timer);
     }
     
-    SDL_GL_DeleteContext(glcontext);
+    SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;

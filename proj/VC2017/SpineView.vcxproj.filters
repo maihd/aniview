@@ -144,6 +144,9 @@
     <ClCompile Include="..\..\src\spine\VertexAttachment.c">
       <Filter>spine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\imgui\imconfig.h">
@@ -319,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\spine\VertexAttachment.h">
       <Filter>spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Texture.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

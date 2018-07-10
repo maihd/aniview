@@ -138,7 +138,7 @@ namespace ImGuiImpl
     // - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application.
     // - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application.
     // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
-    bool ProcessEvent(SDL_Event* event)
+    bool ProcessEvent(const SDL_Event* event)
     {
         ImGuiIO& io = ImGui::GetIO();
         switch (event->type)
