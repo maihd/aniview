@@ -1,0 +1,11 @@
+.vs
+.vscode
+.DS_Store
+
+/proj/VC2017/.vs
+/proj/VC2017/obj
+/proj/VC2017/Debug
+/proj/VC2017/Release
+/proj/VC2017/x64/obj
+/proj/VC2017/x64/Debug
+/proj/VC2017/x64/Release
