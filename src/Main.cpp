@@ -10,6 +10,9 @@
 
 #include "System.h"
 
+#include "imgui\imgui.h"
+#include "imgui_impl\ImGuiImpl.h"
+
 #undef main
 int main(int argc, char* argv[])
 {
@@ -43,6 +46,12 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    ImGuiContext* context = ImGui::CreateContext();
+    (void)context;
+
+    ImGuiIO& io = ImGui::GetIO();
+    (void)io;
+
     Timer timer;
     SDL_Event event;
 
@@ -58,7 +67,7 @@ int main(int argc, char* argv[])
             }
             else
             {
-
+                ImGuiImpl::ProcessEvent(&event);
             }
         }
         if (event.type == SDL_QUIT)
@@ -67,6 +76,12 @@ int main(int argc, char* argv[])
         }
 
         glClear(GL_COLOR_BUFFER_BIT);
+        
+        ImGuiImpl::NewFrame(window);
+        ImGui::Button("Click me!");
+        ImGui::Render();
+        ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
+
         SDL_GL_SwapWindow(window);
 
         Timer::EndFrame(timer);
