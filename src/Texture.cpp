@@ -32,10 +32,10 @@ void Texture::Apply(Texture& texture)
     if (texture.handle)
     {
         glBindTexture(GL_TEXTURE_2D, texture.handle);
-        glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, texture.wrapS);
-        glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, texture.wrapT);
-        glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, texture.magFilter);
-        glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, texture.minFilter);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, texture.wrapS);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, texture.wrapT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, texture.magFilter);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, texture.minFilter);
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 }
@@ -53,7 +53,7 @@ void Texture::SetPixels(Texture& texture, int width, int height, const void* pix
     }
 }
 
-bool Texture::Load(const char* path, Texture* outTexture)
+bool Texture::Load(const char* path, Texture* outTexture, GLenum format, GLenum internalFormat)
 {
     if (table::tryget(textures, path, *outTexture))
     {
@@ -61,18 +61,20 @@ bool Texture::Load(const char* path, Texture* outTexture)
     }
 
     int w, h, n;
-    void* pixels = stbi_load(path, &w, &h, &h, 0);
+    void* pixels = stbi_load(path, &w, &h, &n, 0);
     if (pixels)
     {
         Texture texture;
         Texture::Create(texture);
-        Texture::SetPixels(texture, w, h, pixels);
+        Texture::Apply(texture);
+        Texture::SetPixels(texture, w, h, pixels, format, internalFormat);
 
         if (outTexture)
         {
             outTexture[0] = texture;
         }
         table::set(textures, path, texture);
+        stbi_image_free(pixels);
 
         return true;
     }
@@ -99,11 +101,64 @@ bool Texture::Unload(const char* path)
 
 
 #include "spine/extension.h"
+GLenum Filter_SpineToGL(spAtlasFilter filter)
+{
+    switch (filter)
+    {
+    case SP_ATLAS_LINEAR:
+        return GL_LINEAR;
+
+    case SP_ATLAS_NEAREST:
+        return GL_NEAREST;
+    }
+
+    return GL_LINEAR;
+}
+
+GLenum Wrap_SpineToGL(spAtlasWrap wrap)
+{
+    switch (wrap)
+    {
+    case SP_ATLAS_REPEAT:
+        return GL_REPEAT;
+
+    case SP_ATLAS_CLAMPTOEDGE:
+        return GL_CLAMP;
+    }
+
+    return GL_REPEAT;
+}
+
 void _spAtlasPage_createTexture(spAtlasPage* self, const char* path)
 {
-    Texture texture;
-    if (Texture::Load(path, &texture))
+    GLenum format, internalFormat;
+    switch (self->format)
     {
+    case SP_ATLAS_RGB888:
+        format         = GL_RGB;
+        internalFormat = GL_RGBA;
+        break;
+
+    case SP_ATLAS_RGBA8888:
+        format         = GL_RGBA;
+        internalFormat = GL_RGBA;
+        break;
+
+    case SP_ATLAS_RGBA4444:
+        format         = GL_RGBA4;
+        internalFormat = GL_RGBA;
+        break;
+    }
+
+    Texture texture;
+    if (Texture::Load(path, &texture, format, internalFormat))
+    {             
+        texture.wrapS = Wrap_SpineToGL(self->uWrap);
+        texture.wrapT = Wrap_SpineToGL(self->vWrap);
+        texture.minFilter = Filter_SpineToGL(self->minFilter);
+        texture.magFilter = Filter_SpineToGL(self->magFilter);
+        Texture::Apply(texture);
+
         Texture* savedTexture = new Texture();
         savedTexture[0] = texture;
         self->rendererObject = savedTexture;

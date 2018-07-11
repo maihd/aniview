@@ -1,0 +1,313 @@
+
+dwarf_2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+attack/attack_1
+  rotate: false
+  xy: 399, 321
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+attack/attack_2
+  rotate: false
+  xy: 285, 42
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+attack/attack_3
+  rotate: false
+  xy: 588, 42
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+attack/attack_4
+  rotate: false
+  xy: 702, 321
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+beard
+  rotate: true
+  xy: 891, 52
+  size: 81, 40
+  orig: 81, 40
+  offset: 0, 0
+  index: -1
+blink
+  rotate: true
+  xy: 933, 58
+  size: 75, 24
+  orig: 75, 24
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 891, 203
+  size: 116, 110
+  orig: 116, 110
+  offset: 0, 0
+  index: -1
+charge/charge_1
+  rotate: false
+  xy: 2, 812
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+charge/charge_2
+  rotate: false
+  xy: 2, 600
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+charge/charge_3
+  rotate: false
+  xy: 399, 812
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+charge/charge_4
+  rotate: false
+  xy: 2, 388
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+charge/charge_5
+  rotate: false
+  xy: 399, 600
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+charge/charge_6
+  rotate: true
+  xy: 796, 627
+  size: 395, 210
+  orig: 395, 210
+  offset: 0, 0
+  index: -1
+clue
+  rotate: true
+  xy: 283, 8
+  size: 32, 60
+  orig: 32, 60
+  offset: 0, 0
+  index: -1
+fire/fire_1
+  rotate: false
+  xy: 140, 22
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+fire/fire_2
+  rotate: false
+  xy: 198, 22
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+fire/fire_3
+  rotate: false
+  xy: 959, 69
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+hair_1
+  rotate: true
+  xy: 345, 9
+  size: 31, 43
+  orig: 31, 43
+  offset: 0, 0
+  index: -1
+hair_2
+  rotate: false
+  xy: 355, 332
+  size: 41, 54
+  orig: 41, 54
+  offset: 0, 0
+  index: -1
+l_ear
+  rotate: true
+  xy: 390, 3
+  size: 37, 39
+  orig: 37, 39
+  offset: 0, 0
+  index: -1
+l_foot
+  rotate: false
+  xy: 431, 12
+  size: 34, 28
+  orig: 34, 28
+  offset: 0, 0
+  index: -1
+l_hand
+  rotate: false
+  xy: 74, 16
+  size: 64, 70
+  orig: 64, 70
+  offset: 0, 0
+  index: -1
+l_leg
+  rotate: true
+  xy: 964, 140
+  size: 61, 58
+  orig: 61, 58
+  offset: 0, 0
+  index: -1
+r_arm
+  rotate: true
+  xy: 285, 321
+  size: 65, 68
+  orig: 65, 68
+  offset: 0, 0
+  index: -1
+r_ear
+  rotate: false
+  xy: 999, 30
+  size: 23, 37
+  orig: 23, 37
+  offset: 0, 0
+  index: -1
+r_foot
+  rotate: true
+  xy: 256, 40
+  size: 46, 25
+  orig: 46, 25
+  offset: 0, 0
+  index: -1
+r_hand
+  rotate: false
+  xy: 2, 14
+  size: 70, 72
+  orig: 70, 72
+  offset: 0, 0
+  index: -1
+r_leg
+  rotate: false
+  xy: 933, 2
+  size: 64, 54
+  orig: 64, 54
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 796, 600
+  size: 188, 25
+  orig: 188, 25
+  offset: 0, 0
+  index: -1
+shoulder
+  rotate: false
+  xy: 891, 135
+  size: 71, 66
+  orig: 71, 66
+  offset: 0, 0
+  index: -1
+smoke/smoke_1
+  rotate: false
+  xy: 2, 88
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+
+dwarf_22.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+attack/attack_5
+  rotate: true
+  xy: 285, 60
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+attack/attack_6
+  rotate: true
+  xy: 568, 360
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+attack/attack_7
+  rotate: true
+  xy: 564, 57
+  size: 301, 277
+  orig: 301, 277
+  offset: 0, 0
+  index: -1
+bomb
+  rotate: false
+  xy: 2, 2
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 851, 804
+  size: 163, 157
+  orig: 163, 157
+  offset: 0, 0
+  index: -1
+l_arm
+  rotate: false
+  xy: 851, 751
+  size: 49, 51
+  orig: 49, 51
+  offset: 0, 0
+  index: -1
+smoke/smoke_2
+  rotate: false
+  xy: 2, 663
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+smoke/smoke_3
+  rotate: false
+  xy: 2, 363
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+smoke/smoke_4
+  rotate: false
+  xy: 285, 663
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+smoke/smoke_5
+  rotate: false
+  xy: 2, 63
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+smoke/smoke_6
+  rotate: false
+  xy: 285, 363
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1
+smoke/smoke_7
+  rotate: false
+  xy: 568, 663
+  size: 281, 298
+  orig: 281, 298
+  offset: 0, 0
+  index: -1

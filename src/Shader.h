@@ -27,12 +27,12 @@ public:
 
     static void UseShader(Shader& shader);
     
-    static void SetUniform(Shader& shader, const vec2& value);
-    static void SetUniform(Shader& shader, const vec3& value);
-    static void SetUniform(Shader& shader, const vec4& value);
-    static void SetUniform(Shader& shader, const mat2& value);
-    static void SetUniform(Shader& shader, const mat3& value);
-    static void SetUniform(Shader& shader, const mat4& value);
+    static void SetUniform(Shader& shader, const char* name, const vec2& value);
+    static void SetUniform(Shader& shader, const char* name, const vec3& value);
+    static void SetUniform(Shader& shader, const char* name, const vec4& value);
+    static void SetUniform(Shader& shader, const char* name, const mat2& value);
+    static void SetUniform(Shader& shader, const char* name, const mat3& value);
+    static void SetUniform(Shader& shader, const char* name, const mat4& value);
 };
 
 #endif /* __SHADER_H__ */

@@ -147,32 +147,56 @@ void Shader::UseShader(Shader& shader)
     }
 }
 
-void Shader::SetUniform(Shader& shader, const vec2& value)
+void Shader::SetUniform(Shader& shader, const char* name, const vec2& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniform2f(location, value.x, value.y);
+    }
 }
 
-void Shader::SetUniform(Shader& shader, const vec3& value)
+void Shader::SetUniform(Shader& shader, const char* name, const vec3& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniform3f(location, value.x, value.y, value.z);
+    }
 }
 
-void Shader::SetUniform(Shader& shader, const vec4& value)
+void Shader::SetUniform(Shader& shader, const char* name, const vec4& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniform4f(location, value.x, value.y, value.z, value.w);
+    }
 }
 
-void Shader::SetUniform(Shader& shader, const mat2& value)
+void Shader::SetUniform(Shader& shader, const char* name, const mat2& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniformMatrix2fv(location, 1, GL_FALSE, value);
+    }
 }
 
-void Shader::SetUniform(Shader& shader, const mat3& value)
+void Shader::SetUniform(Shader& shader, const char* name, const mat3& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniformMatrix3fv(location, 1, GL_FALSE, value);
+    }
 }
 
-void Shader::SetUniform(Shader& shader, const mat4& value)
+void Shader::SetUniform(Shader& shader, const char* name, const mat4& value)
 {
-
+    GLint location = glGetUniformLocation(shader.handle, name);
+    if (location >= 0)
+    {
+        glUniformMatrix4fv(location, 1, GL_FALSE, value);
+    }
 }

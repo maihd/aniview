@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     }
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
     SDL_GLContext glContext = SDL_GL_CreateContext(window);
     if (!glContext)
@@ -59,8 +59,13 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    glViewport(0, 0, 800, 600);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     SpineAnimation spineAnimation;
-    SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
+    SpineAnimation::Create(spineAnimation, "../../res/dwarf_2.atlas", "../../res/dwarf_2.json");
+    SpineAnimation::Play(spineAnimation, "idle");
 
     Mesh mesh;
     Mesh::Create(mesh);

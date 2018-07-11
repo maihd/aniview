@@ -32,6 +32,9 @@ public:
 
     static void Update(SpineAnimation& spineAnimation, float deltaTime);
     static void Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader);
+
+    static void Play(SpineAnimation& spineAnimation, const char* name, bool loop = true);
+    static void Stop(SpineAnimation& spineAnimation);
 };
 
 #endif /* __SPINE_ANIMATION_H__ */

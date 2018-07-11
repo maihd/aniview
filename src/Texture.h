@@ -29,7 +29,7 @@ public:
     static void Create(Texture& texture);
     static void Delete(Texture& texture);
 
-    static bool Load(const char* path, Texture* texture);
+    static bool Load(const char* path, Texture* texture, GLenum format = GL_RGBA, GLenum internalFormat = GL_RGBA);
     static bool Unload(const char* path);
 
     static void Apply(Texture& texture);
