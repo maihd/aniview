@@ -8,15 +8,16 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
 
-#include "System.h"
-
 #include "imgui/imgui.h"
 #include "imgui_impl/ImGuiImpl.h"
 
 #define MEMBUF_IMPL
 #include "memwise/membuf.h"
 
-#include "spine/spine.h"
+#include "System.h"
+#include "Shader.h"
+#include "Texture.h"
+#include "SpineAnimation.h"
 
 #undef main
 int main(int argc, char* argv[])
@@ -51,15 +52,11 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    spAtlas* atlas = spAtlas_createFromFile("../../res/spineboy.atlas", NULL);
-    spAtlasAttachmentLoader* loader = spAtlasAttachmentLoader_create(atlas);
+    SpineAnimation spineAnimation;
+    SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
 
-    spSkeletonJson* skeletonJson = spSkeletonJson_createWithLoader((spAttachmentLoader*)loader);
-    spSkeletonData* skeletonData = spSkeletonJson_readSkeletonDataFile(skeletonJson, "../../res/spineboy.json");
-    spSkeleton* skeleton = spSkeleton_create(skeletonData);
-
-    spAnimationStateData* spineAnimData = spAnimationStateData_create(skeleton->data);
-    spAnimationState* spineAnimState = spAnimationState_create(spineAnimData);
+    Shader defaultShader;
+    Shader::Load("../../res/Shaders/Default", &defaultShader);
 
     ImGuiContext* context = ImGui::CreateContext();
     (void)context;
@@ -91,6 +88,8 @@ int main(int argc, char* argv[])
             break;
         }
 
+        SpineAnimation::Update(spineAnimation, deltaTime);
+
         glClear(GL_COLOR_BUFFER_BIT);
         
         ImGuiImpl::NewFrame(window, deltaTime);
@@ -108,6 +107,9 @@ int main(int argc, char* argv[])
         deltaTime = (float)Timer::Seconds(timer);
     }
     
+
+    SpineAnimation::Delete(spineAnimation);
+
     SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(window);
     SDL_Quit();

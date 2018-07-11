@@ -9,7 +9,7 @@
       <AdditionalDependencies>SDL2.lib;glew32s.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>cp ../../ThirdParty/WinDesktop/SDL2-2.0.8/lib/x86/SDL2.dll $(OutDir)</Command>
+      <Command>copy ..\..\ThirdParty\WinDesktop\SDL2-2.0.8\lib\x86\SDL2.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />

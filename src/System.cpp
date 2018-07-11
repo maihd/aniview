@@ -18,7 +18,7 @@ namespace System
     {
         va_list varg;
         va_start(varg, fmt);
-        int res = printf(fmt, varg);
+        int res = vprintf(fmt, varg);
         va_end(varg);
 
         return res;
@@ -31,7 +31,7 @@ namespace System
 
         va_list varg;
         va_start(varg, fmt);
-        int res = fprintf(stderr, tmp, varg);
+        int res = vfprintf(stderr, tmp, varg);
         va_end(varg);
 
         getchar();

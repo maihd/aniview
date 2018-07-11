@@ -1,5 +1,7 @@
 #include "Texture.h"
 
+#include <Windows.h>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
@@ -116,21 +118,30 @@ void _spAtlasPage_disposeTexture(spAtlasPage* self)
 
 char* _spUtil_readFile(const char* path, int* length)
 {
-    FILE* file = fopen(path, "r");
-    if (file)
+    HANDLE file = CreateFileA(
+        path,
+        GENERIC_READ,
+        0, 
+        NULL,
+        OPEN_EXISTING,
+        FILE_ATTRIBUTE_NORMAL,
+        NULL
+    );
+    if (file != INVALID_HANDLE_VALUE)
     {
-        fseek(file, -1, SEEK_END);
+        DWORD number = GetFileSize(file, NULL);
+        char* buffer = (char*)malloc((number + 1) * sizeof(char));
 
-        int   number = ftell(file);
-        char* buffer = (char*)malloc(number);
-
-        fread(buffer, sizeof(char), number, file);
-        fclose(file);
+        if (ReadFile(file, buffer, number, NULL, NULL))
+        {
+        }
+        CloseHandle(file);
 
         if (length)
         {
             *length = number;
         }
+        buffer[number] = 0;
         return buffer;
     }
     else
