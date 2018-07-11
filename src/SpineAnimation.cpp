@@ -79,3 +79,9 @@ void SpineAnimation::Update(SpineAnimation& spineAnimation, float deltaTime)
 {
     spAnimationState_update(spineAnimation.animationState, deltaTime);
 }
+
+
+void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader)
+{
+
+}

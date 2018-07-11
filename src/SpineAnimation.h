@@ -6,13 +6,12 @@
 
 #include "spine/spine.h"
 
+#include "Mesh.h"
+#include "Shader.h"
+
 struct SpineAnimation
 {
 public:
-    GLuint            vao;
-    GLuint            vbo;
-    GLuint            ebo;
-
     spSkeleton*       skeleton;
     spAnimationState* animationState;
 
@@ -32,6 +31,7 @@ public:
     static bool Delete(SpineAnimation& spineAnimation);
 
     static void Update(SpineAnimation& spineAnimation, float deltaTime);
+    static void Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader);
 };
 
 #endif /* __SPINE_ANIMATION_H__ */

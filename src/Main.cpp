@@ -19,6 +19,13 @@
 #include "Texture.h"
 #include "SpineAnimation.h"
 
+// Request mobile devices (laptop, surface, ...) use integrated GPU 
+extern "C"
+{
+    __declspec(dllexport) DWORD NvOptimusEnablement                  = 0x1;
+    __declspec(dllexport) int   AmdPowerXpressRequireHighPerformance = 0x1;
+}
+
 #undef main
 int main(int argc, char* argv[])
 {
@@ -54,6 +61,9 @@ int main(int argc, char* argv[])
 
     SpineAnimation spineAnimation;
     SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
+
+    Mesh mesh;
+    Mesh::Create(mesh);
 
     Shader defaultShader;
     Shader::Load("../../res/Shaders/Default", &defaultShader);
@@ -92,6 +102,8 @@ int main(int argc, char* argv[])
 
         glClear(GL_COLOR_BUFFER_BIT);
         
+        SpineAnimation::Render(spineAnimation, mesh, defaultShader);
+
         ImGuiImpl::NewFrame(window, deltaTime);
         
         ImGui::Button("Click me!");

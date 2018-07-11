@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\src\imgui_impl\ImGuiImpl.cpp" />
     <ClCompile Include="..\..\src\Logger.cpp" />
     <ClCompile Include="..\..\src\Main.cpp" />
+    <ClCompile Include="..\..\src\Mesh.cpp" />
     <ClCompile Include="..\..\src\Shader.cpp" />
     <ClCompile Include="..\..\src\SpineAnimation.cpp" />
     <ClCompile Include="..\..\src\spine\Animation.c" />
@@ -84,6 +85,7 @@
     <ClInclude Include="..\..\src\memwise\table.h" />
     <ClInclude Include="..\..\src\memwise\table.hpp" />
     <ClInclude Include="..\..\src\memwise\tempo.h" />
+    <ClInclude Include="..\..\src\Mesh.h" />
     <ClInclude Include="..\..\src\Shader.h" />
     <ClInclude Include="..\..\src\SpineAnimation.h" />
     <ClInclude Include="..\..\src\spine\Animation.h" />
