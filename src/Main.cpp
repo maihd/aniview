@@ -161,7 +161,7 @@ namespace Engine
         ImGuiImpl::Init(window);
 
         SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
-        SpineAnimation::Play(spineAnimation, "run");
+        SpineAnimation::Play(spineAnimation, 0);
 
         Mesh::Create(mesh);
         Shader::Load("../../res/Shaders/Default", &defaultShader);

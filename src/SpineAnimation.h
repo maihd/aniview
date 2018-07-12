@@ -34,6 +34,7 @@ public:
     static void Update(SpineAnimation& spineAnimation, float deltaTime);
     static void Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader, const mat4& transform = mat4(1.0f));
 
+	static void Play(SpineAnimation& spineAnimation, int index, bool loop = true);
     static void Play(SpineAnimation& spineAnimation, const char* name, bool loop = true);
     static void Stop(SpineAnimation& spineAnimation);
 

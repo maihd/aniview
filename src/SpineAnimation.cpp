@@ -215,6 +215,13 @@ void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& 
     Shader::Uninstall(shader);
 }
 
+void SpineAnimation::Play(SpineAnimation& spineAnimation, int index, bool loop)
+{
+	spAnimationState_setAnimation(spineAnimation.animationState, 0, spineAnimation.skeleton->data->animations[index], loop);
+
+	SpineAnimation::Update(spineAnimation, 0.0f);
+}
+
 void SpineAnimation::Play(SpineAnimation& spineAnimation, const char* name, bool loop)
 {
     spAnimationState_setAnimationByName(spineAnimation.animationState, 0, name, loop);
