@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\src\imgui\imgui.cpp" />
     <ClCompile Include="..\..\src\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\..\src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\src\imgui_impl\ImGuiExtensions.cpp" />
     <ClCompile Include="..\..\src\imgui_impl\ImGuiImpl.cpp" />
     <ClCompile Include="..\..\src\Logger.cpp" />
     <ClCompile Include="..\..\src\Main.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="..\..\src\imgui\stb_rect_pack.h" />
     <ClInclude Include="..\..\src\imgui\stb_textedit.h" />
     <ClInclude Include="..\..\src\imgui\stb_truetype.h" />
+    <ClInclude Include="..\..\src\imgui_impl\ImGuiExtensions.h" />
     <ClInclude Include="..\..\src\imgui_impl\ImGuiImpl.h" />
     <ClInclude Include="..\..\src\Logger.h" />
     <ClInclude Include="..\..\src\memwise\array.h" />

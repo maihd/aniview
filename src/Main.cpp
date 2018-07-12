@@ -199,10 +199,10 @@ namespace Engine
             }
 
             static char atlasPath[1024] = "../../res/spineboy.atlas";
-            ImGui::InputText("Atlas path", atlasPath, sizeof(atlasPath));
+            ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas\0*.atlas\0");
 
             static char jsonPath[1024] = "../../res/spineboy.json";
-            ImGui::InputText("Json path", jsonPath, sizeof(jsonPath));
+            ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json\0*.json\0");
 
             if (ImGui::Button("Change File"))
             {

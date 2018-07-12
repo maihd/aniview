@@ -10,10 +10,12 @@ static table_t<const char*, spSkeletonData*> skeletonDatas(membuf_heap());
 static spAtlas* LoadAtlas(const char* path)
 {
     spAtlas* atlas;
+#if 0
     if (table::tryget(atlases, path, atlas))
     {
         return atlas;
     }
+#endif
 
     atlas = spAtlas_createFromFile(path, NULL);
     if (atlas)
@@ -26,10 +28,12 @@ static spAtlas* LoadAtlas(const char* path)
 static spSkeletonData* LoadDataFromJson(spAtlas* atlas, const char* path)
 {
     spSkeletonData* data;
+#if 0
     if (table::tryget(skeletonDatas, path, data))
     {
         return data;
     }
+#endif
 
     spAtlasAttachmentLoader* loader = spAtlasAttachmentLoader_create(atlas);
     spSkeletonJson* json = spSkeletonJson_createWithLoader(&loader->super);
@@ -57,6 +61,7 @@ bool SpineAnimation::Create(SpineAnimation& spineAnimation, const char* atlasPat
     spSkeletonData* skeletonData = LoadDataFromJson(atlas, jsonPath);
     if (!skeletonData)
     {
+        spAtlas_dispose(atlas);
         return false;
     }
 
@@ -64,19 +69,28 @@ bool SpineAnimation::Create(SpineAnimation& spineAnimation, const char* atlasPat
     spAnimationStateData* animationData = spAnimationStateData_create(skeletonData);
     spAnimationState* animationState = spAnimationState_create(animationData);
 
+    spineAnimation.atlas = atlas;
     spineAnimation.skeleton = skeleton;
+    spineAnimation.skeletonData = skeletonData;
     spineAnimation.animationState = animationState;
+    spineAnimation.animationStateData = animationData;
 
     return true;
 }
 
 bool SpineAnimation::Delete(SpineAnimation& spineAnimation)
 {
+    spAtlas_dispose(spineAnimation.atlas);
     spSkeleton_dispose(spineAnimation.skeleton);
+    spSkeletonData_dispose(spineAnimation.skeletonData);
     spAnimationState_dispose(spineAnimation.animationState);
+    spAnimationStateData_dispose(spineAnimation.animationStateData);
 
+    spineAnimation.atlas = NULL;
     spineAnimation.skeleton = NULL;
+    spineAnimation.skeletonData = NULL;
     spineAnimation.animationState = NULL;
+    spineAnimation.animationStateData = NULL;
 
     return true;
 }

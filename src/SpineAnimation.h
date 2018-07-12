@@ -13,12 +13,18 @@
 struct SpineAnimation
 {
 public:
-    spSkeleton*       skeleton;
-    spAnimationState* animationState;
+    spAtlas*              atlas;
+    spSkeleton*           skeleton;
+    spSkeletonData*       skeletonData;
+    spAnimationState*     animationState;
+    spAnimationStateData* animationStateData;
 
     inline SpineAnimation()
-        : skeleton(0)
+        : atlas(0)
+        , skeleton(0)
+        , skeletonData(0)
         , animationState(0)
+        , animationStateData(0)
     {
     }
 

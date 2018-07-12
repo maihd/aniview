@@ -17,6 +17,17 @@ namespace ImGuiImpl
     static int          g_AttribLocationPosition = 0, g_AttribLocationUV = 0, g_AttribLocationColor = 0;
     static unsigned int g_VboHandle = 0, g_VaoHandle = 0, g_ElementsHandle = 0;
 
+	static SDL_Window*  attachedWindow;
+
+	HWND GetAttachHWND(void)
+	{
+        SDL_SysWMinfo info;
+        SDL_VERSION(&info.version);
+        SDL_GetWindowWMInfo(attachedWindow, &info);
+
+        return info.info.win.window;
+	}	
+
     // This is the main rendering function that you have to implement and provide to ImGui (via setting up 'RenderDrawListsFn' in the ImGuiIO structure)
     // Note that this implementation is little overcomplicated because we are saving/setting up/restoring every OpenGL state explicitly, in order to be able to run within any OpenGL engine that doesn't do so. 
     // If text or lines are blurry when integrating ImGui in your engine: in your Render function, try translating your projection matrix by (0.5f,0.5f) or (0.375f,0.375f)
@@ -280,7 +291,7 @@ namespace ImGuiImpl
         return true;
     }
 
-    void    InvalidateDeviceObjects()
+    void InvalidateDeviceObjects()
     {
         if (g_VaoHandle) glDeleteVertexArrays(1, &g_VaoHandle);
         if (g_VboHandle) glDeleteBuffers(1, &g_VboHandle);
@@ -306,8 +317,10 @@ namespace ImGuiImpl
         }
     }
 
-    bool    Init(SDL_Window* window)
+    bool Init(SDL_Window* window)
     {
+		attachedWindow = window;
+
         ImGuiIO& io = ImGui::GetIO();
         io.KeyMap[ImGuiKey_Tab] = SDLK_TAB;                     // Keyboard mapping. ImGui will use those indices to peek into the io.KeyDown[] array.
         io.KeyMap[ImGuiKey_LeftArrow] = SDL_SCANCODE_LEFT;

@@ -156,6 +156,9 @@
     <ClCompile Include="..\..\src\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\imgui_impl\ImGuiExtensions.cpp">
+      <Filter>imgui_impl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\imgui\imconfig.h">
@@ -343,6 +346,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Mesh.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\imgui_impl\ImGuiExtensions.h">
+      <Filter>imgui_impl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

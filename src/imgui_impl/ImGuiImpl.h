@@ -1,6 +1,9 @@
 #ifndef __IMGUI_IMPL_H__
 #define __IMGUI_IMPL_H__
 
+#include <Windows.h>
+#include "ImGuiExtensions.h"
+
 struct SDL_Window;
 struct ImDrawData;
 typedef union SDL_Event SDL_Event;
@@ -16,6 +19,8 @@ namespace ImGuiImpl
     // Use if you want to reset your rendering device without losing ImGui state.
     IMGUI_API void        InvalidateDeviceObjects();
     IMGUI_API bool        CreateDeviceObjects();
+
+	IMGUI_API HWND        GetAttachHWND(void);
 }
 
 #endif
