@@ -19,6 +19,8 @@
 #include "Texture.h"
 #include "SpineAnimation.h"
 
+#include "IconFontsAwesome5.h"
+
 // Request mobile devices (laptop, surface, ...) use integrated GPU 
 extern "C"
 {
@@ -156,7 +158,13 @@ namespace Engine
         (void)context;
 
         ImGuiIO& io = ImGui::GetIO();
-        (void)io;
+        io.Fonts->AddFontDefault();
+
+        ImFontConfig fontConfig;
+        fontConfig.MergeMode = true;
+        fontConfig.GlyphMinAdvanceX = 13.0f;
+        static const ImWchar iconRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
+        io.Fonts->AddFontFromFileTTF("../../res/Fonts/fa-solid-900.ttf", 13.0f, &fontConfig, iconRanges);
 
         ImGuiImpl::Init(window);
 

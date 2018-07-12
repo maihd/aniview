@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <Windows.h>
 
+#include "../IconFontsAwesome5.h"
+
 namespace ImGui
 {
 	bool FileDialog(const char* title, char* buffer, int length, const char* filter)
@@ -13,8 +15,8 @@ namespace ImGui
 		bool result = false;
         
         char buttonLabel[1024];
-        sprintf(buttonLabel, "+##%s", title);
-        if (ImGui::Button(buttonLabel))
+        sprintf(buttonLabel, ICON_FA_SEARCH "##%s", title);
+        if (ImGui::Button(buttonLabel, vec2(30.0f, 0.0f)))
 		{
 			OPENFILENAMEA ofn;
             HWND hwnd = ImGuiImpl::GetAttachHWND();
@@ -40,7 +42,7 @@ namespace ImGui
             }
 		}
         
-        ImGui::SameLine();
+        ImGui::SameLine(ImGui::GetStyle().WindowPadding.x + 30.0f);
 		result |= ImGui::InputText(title, buffer, length);
 		return result;
 	}
