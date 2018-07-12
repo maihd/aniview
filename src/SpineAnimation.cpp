@@ -226,3 +226,33 @@ void SpineAnimation::Stop(SpineAnimation& spineAnimation)
 {
     spAnimationState_setEmptyAnimation(spineAnimation.animationState, 0, 0.0f);
 }
+
+int SpineAnimation::AnimationCount(SpineAnimation& spineAnimation)
+{
+    if (spineAnimation.skeleton)
+    {
+        return spineAnimation.skeleton->data->animationsCount;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+bool SpineAnimation::AnimationNames(SpineAnimation& spineAnimation, char* names[], int count)
+{
+    if (spineAnimation.skeleton)
+    {
+        count = min(count, SpineAnimation::AnimationCount(spineAnimation));
+        spAnimation** animations = spineAnimation.skeleton->data->animations;
+        for (int i = 0; i < count; i++)
+        {
+            strcpy(names[i], animations[i]->name);
+        }
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

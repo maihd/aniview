@@ -36,6 +36,9 @@ public:
 
     static void Play(SpineAnimation& spineAnimation, const char* name, bool loop = true);
     static void Stop(SpineAnimation& spineAnimation);
+
+    static int  AnimationCount(SpineAnimation& spineAnimation);
+    static bool AnimationNames(SpineAnimation& spineAnimation, char* names[], int count);
 };
 
 #endif /* __SPINE_ANIMATION_H__ */

@@ -183,6 +183,21 @@ namespace Engine
 
         if (ImGui::Begin("Menu"))
         {
+            static int  index = 0;
+            static char buffer[32][1024] = {};
+            static char* names[32];
+
+            for (int i = 0; i < 32; i++)
+            {
+                names[i] = buffer[i];
+            }
+
+            SpineAnimation::AnimationNames(spineAnimation, names, 32);
+            if (ImGui::Combo("Animation", &index, names, SpineAnimation::AnimationCount(spineAnimation)))
+            {
+                SpineAnimation::Play(spineAnimation, names[index]);
+            }
+
             static char atlasPath[1024] = "../../res/spineboy.atlas";
             ImGui::InputText("Atlas path", atlasPath, sizeof(atlasPath));
 
