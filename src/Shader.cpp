@@ -139,11 +139,21 @@ bool Shader::Unload(const char* path)
     }
 }
 
-void Shader::UseShader(Shader& shader)
+void Shader::Install(Shader& shader)
 {
     if (shader.handle)
     {
         glUseProgram(shader.handle);
+    }
+}
+
+void Shader::Uninstall(Shader& shader)
+{
+    GLint program;
+    glGetIntegerv(GL_CURRENT_PROGRAM, &program);
+    if (shader.handle == program)
+    {
+        glUseProgram(0);
     }
 }
 

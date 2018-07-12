@@ -8,6 +8,7 @@
 
 #include "Mesh.h"
 #include "Shader.h"
+#include "vmath/vmath.h"
 
 struct SpineAnimation
 {
@@ -31,7 +32,7 @@ public:
     static bool Delete(SpineAnimation& spineAnimation);
 
     static void Update(SpineAnimation& spineAnimation, float deltaTime);
-    static void Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader);
+    static void Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader, const mat4& transform = mat4(1.0f));
 
     static void Play(SpineAnimation& spineAnimation, const char* name, bool loop = true);
     static void Stop(SpineAnimation& spineAnimation);

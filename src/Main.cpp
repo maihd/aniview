@@ -136,6 +136,8 @@ namespace Engine
     Shader defaultShader;
     SpineAnimation spineAnimation;
     SDL_Window* window;
+    
+    mat4 projMatrix;
 
     void Init(SDL_Window* window)
     {
@@ -144,6 +146,8 @@ namespace Engine
         glViewport(0, 0, 800, 600);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        projMatrix = ortho(-400, 400, 0, 600, -10, 10);
 
         ImGuiContext* context = ImGui::CreateContext();
         (void)context;
@@ -169,15 +173,17 @@ namespace Engine
     {
         ImGuiImpl::NewFrame(window, deltaTime);
 
-        ImGui::Button("Click me!");
+    #if 1
+        ImGui::Text("Debug information");
         ImGui::Text("FPS: %f", 1.0f / deltaTime);
+    #endif
 
         ImGui::Render();
     }
 
     void Render(void)
     {
-        SpineAnimation::Render(spineAnimation, mesh, defaultShader);
+        SpineAnimation::Render(spineAnimation, mesh, defaultShader, projMatrix);
         ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
     }
 

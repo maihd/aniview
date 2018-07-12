@@ -102,9 +102,10 @@ static void AddVertex(float x, float y, float u, float v, float r, float g, floa
     *index += 1;
 }
 
-void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader)
+void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader, const mat4& transform)
 {
-    mat4 proj = ortho(-400, 400, 0, 600, -10, 10);
+    Shader::Install(shader);
+    Shader::SetUniform(shader, "SpineView_MVP", transform);
 
     for (int i = 0, n = spineAnimation.skeleton->slotsCount; i < n; i++)
     {
@@ -194,9 +195,6 @@ void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& 
         glBindVertexArray(mesh.vao);
         glBindBuffer(GL_ARRAY_BUFFER, mesh.vbo);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.ebo);
-        
-        Shader::UseShader(shader);
-        Shader::SetUniform(shader, "SpineView_MVP", proj);
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture->handle);
@@ -208,6 +206,8 @@ void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& 
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindVertexArray(0);
     }
+
+    Shader::Uninstall(shader);
 }
 
 void SpineAnimation::Play(SpineAnimation& spineAnimation, const char* name, bool loop)

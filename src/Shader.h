@@ -25,7 +25,8 @@ public:
     static bool Load(const char* path, Shader* shader);
     static bool Unload(const char* path);
 
-    static void UseShader(Shader& shader);
+    static void Install(Shader& shader);
+    static void Uninstall(Shader& shader);
     
     static void SetUniform(Shader& shader, const char* name, const vec2& value);
     static void SetUniform(Shader& shader, const char* name, const vec3& value);
