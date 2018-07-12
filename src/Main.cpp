@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
     float deltaTime = 0.0f;
     float totalTime = 0.0f;
     float fixedStepTimer = 0.0f;
-    float fixedDeltaTime = 0.25f;
+    float fixedDeltaTime = 1.0f / 40; // Animation run in 40fps
     while (true)
     {
         Timer::NewFrame(timer);
@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
 
         if (fixedStepTimer >= fixedDeltaTime)
         {
-            fixedStepTimer = 0;
+            fixedStepTimer = fmodf(fixedStepTimer, fixedDeltaTime);
             Engine::Update(deltaTime, fixedDeltaTime);
         }
         else
@@ -154,7 +154,7 @@ namespace Engine
         ImGuiImpl::Init(window);
 
         SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
-        SpineAnimation::Play(spineAnimation, "idle");
+        SpineAnimation::Play(spineAnimation, "run");
 
         Mesh::Create(mesh);
         Shader::Load("../../res/Shaders/Default", &defaultShader);
@@ -170,6 +170,7 @@ namespace Engine
         ImGuiImpl::NewFrame(window, deltaTime);
 
         ImGui::Button("Click me!");
+        ImGui::Text("FPS: %f", 1.0f / deltaTime);
 
         ImGui::Render();
     }
