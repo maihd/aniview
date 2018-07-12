@@ -11,7 +11,7 @@ namespace ImGui
 	bool FileDialog(const char* title, char* buffer, int length, const char* filter)
 	{
 		bool result = false;
-        ImGui::NextColumn();
+        
         char buttonLabel[1024];
         sprintf(buttonLabel, "+##%s", title);
         if (ImGui::Button(buttonLabel))
@@ -40,7 +40,7 @@ namespace ImGui
             }
 		}
         
-        ImGui::NextColumn();
+        ImGui::SameLine();
 		result |= ImGui::InputText(title, buffer, length);
 		return result;
 	}
