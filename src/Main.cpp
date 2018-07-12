@@ -187,17 +187,30 @@ namespace Engine
     #if 1
         ImGui::Text("Debug information");
         ImGui::Text("FPS: %f", 1.0f / deltaTime);
+
+        const char* renderer = (const char*)glGetString(GL_RENDERER);
+        ImGui::Text("GPU: %s", renderer);
     #endif
 
-        if (ImGui::Begin("Menu"))
+        ImGuiStyle& style = ImGui::GetStyle();
+        style.WindowRounding = 0;
+        style.WindowBorderSize = 0;
+
+        ImGuiWindowFlags flags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar;
+        ImGui::SetNextWindowPos(vec2(0, 0));
+        ImGui::SetNextWindowSize(vec2(360, 720));
+        if (ImGui::Begin("Menu", NULL, flags))
         {
             static int  index = 0;
             static char buffer[32][1024] = {};
             static char* names[32];
 
-            for (int i = 0; i < 32; i++)
+            if (names[0] == 0)
             {
-                names[i] = buffer[i];
+                for (int i = 0; i < 32; i++)
+                {
+                    names[i] = buffer[i];
+                }
             }
 
             SpineAnimation::AnimationNames(spineAnimation, names, 32);
