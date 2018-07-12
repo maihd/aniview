@@ -26,6 +26,16 @@ extern "C"
     __declspec(dllexport) int   AmdPowerXpressRequireHighPerformance = 0x1;
 }
 
+namespace Engine
+{
+    void Init(SDL_Window* window);
+    void Quit(void);
+
+    void OnGUI(float deltaTime);
+    void Render(void);
+    void Update(float deltaTime, float fixedDeltaTime);
+}
+
 #undef main
 int main(int argc, char* argv[])
 {
@@ -58,31 +68,16 @@ int main(int argc, char* argv[])
         System::Error("glewInit(): %s", glewGetErrorString(glewStatus));
         return 1;
     }
-
-    glViewport(0, 0, 800, 600);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    SpineAnimation spineAnimation;
-    SpineAnimation::Create(spineAnimation, "../../res/dwarf_2.atlas", "../../res/dwarf_2.json");
-    SpineAnimation::Play(spineAnimation, "idle");
-
-    Mesh mesh;
-    Mesh::Create(mesh);
-
-    Shader defaultShader;
-    Shader::Load("../../res/Shaders/Default", &defaultShader);
-
-    ImGuiContext* context = ImGui::CreateContext();
-    (void)context;
-
-    ImGuiIO& io = ImGui::GetIO();
-    (void)io;
+    
+    Engine::Init(window);
 
     Timer timer;
-    float deltaTime = 0.0f;
     SDL_Event event;
 
+    float deltaTime = 0.0f;
+    float totalTime = 0.0f;
+    float fixedStepTimer = 0.0f;
+    float fixedDeltaTime = 0.25f;
     while (true)
     {
         Timer::NewFrame(timer);
@@ -103,32 +98,90 @@ int main(int argc, char* argv[])
             break;
         }
 
-        SpineAnimation::Update(spineAnimation, deltaTime);
+        if (fixedStepTimer >= fixedDeltaTime)
+        {
+            fixedStepTimer = 0;
+            Engine::Update(deltaTime, fixedDeltaTime);
+        }
+        else
+        {
+            Engine::Update(deltaTime, 0.0f);
+        }
+
+        Engine::OnGUI(deltaTime);
 
         glClear(GL_COLOR_BUFFER_BIT);
-        
-        SpineAnimation::Render(spineAnimation, mesh, defaultShader);
-
-        ImGuiImpl::NewFrame(window, deltaTime);
-        
-        ImGui::Button("Click me!");
-        
-        ImGui::Render();
-        ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
-
+        Engine::Render();
         SDL_GL_SwapWindow(window);
 
         Timer::EndFrame(timer);
         Timer::Sleep(timer);
 
         deltaTime = (float)Timer::Seconds(timer);
+        totalTime = totalTime + deltaTime;
+        fixedStepTimer += deltaTime;
     }
     
-
-    SpineAnimation::Delete(spineAnimation);
+    Engine::Quit();
 
     SDL_GL_DeleteContext(glContext);
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;
+}
+
+namespace Engine
+{
+    Mesh mesh;
+    Shader defaultShader;
+    SpineAnimation spineAnimation;
+    SDL_Window* window;
+
+    void Init(SDL_Window* window)
+    {
+        Engine::window = window;
+
+        glViewport(0, 0, 800, 600);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        ImGuiContext* context = ImGui::CreateContext();
+        (void)context;
+
+        ImGuiIO& io = ImGui::GetIO();
+        (void)io;
+
+        ImGuiImpl::Init(window);
+
+        SpineAnimation::Create(spineAnimation, "../../res/spineboy.atlas", "../../res/spineboy.json");
+        SpineAnimation::Play(spineAnimation, "idle");
+
+        Mesh::Create(mesh);
+        Shader::Load("../../res/Shaders/Default", &defaultShader);
+    }
+
+    void Quit(void)
+    {
+        SpineAnimation::Delete(spineAnimation);
+    }
+
+    void OnGUI(float deltaTime)
+    {
+        ImGuiImpl::NewFrame(window, deltaTime);
+
+        ImGui::Button("Click me!");
+
+        ImGui::Render();
+    }
+
+    void Render(void)
+    {
+        SpineAnimation::Render(spineAnimation, mesh, defaultShader);
+        ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
+    }
+
+    void Update(float deltaTime, float fixedDeltaTime)
+    {
+        SpineAnimation::Update(spineAnimation, fixedDeltaTime);
+    }
 }
