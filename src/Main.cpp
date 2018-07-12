@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    SDL_Window* window = SDL_CreateWindow("SpineView", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    SDL_Window* window = SDL_CreateWindow("SpineView", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
     if (!window)
     {
         System::Error("SDL_CreateWindow(): %s", SDL_GetError());
@@ -143,11 +143,14 @@ namespace Engine
     {
         Engine::window = window;
 
-        glViewport(0, 0, 800, 600);
+        int width, height;
+        SDL_GetWindowSize(window, &width, &height);
+
+        glViewport(0, 0, width, height);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        projMatrix = ortho(-400, 400, 0, 600, -10, 10);
+        projMatrix = ortho(-width * 0.5f, width * 0.5f, 0, height, -10, 10);
 
         ImGuiContext* context = ImGui::CreateContext();
         (void)context;
@@ -177,6 +180,28 @@ namespace Engine
         ImGui::Text("Debug information");
         ImGui::Text("FPS: %f", 1.0f / deltaTime);
     #endif
+
+        if (ImGui::Begin("Menu"))
+        {
+            static char atlasPath[1024] = "../../res/spineboy.atlas";
+            ImGui::InputText("Atlas path", atlasPath, sizeof(atlasPath));
+
+            static char jsonPath[1024] = "../../res/spineboy.json";
+            ImGui::InputText("Json path", jsonPath, sizeof(jsonPath));
+
+            if (ImGui::Button("Change File"))
+            {
+                SpineAnimation temp;
+                if (SpineAnimation::Create(temp, atlasPath, jsonPath))
+                {
+                    SpineAnimation::Delete(spineAnimation);
+
+                    spineAnimation = temp;
+                    SpineAnimation::Play(spineAnimation, "idle");
+                }
+            }
+        }
+        ImGui::End();
 
         ImGui::Render();
     }

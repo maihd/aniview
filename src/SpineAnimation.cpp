@@ -35,6 +35,11 @@ static spSkeletonData* LoadDataFromJson(spAtlas* atlas, const char* path)
     spSkeletonJson* json = spSkeletonJson_createWithLoader(&loader->super);
 
     data = spSkeletonJson_readSkeletonDataFile(json, path);
+    if (!data)
+    {
+        table::set(skeletonDatas, path, data);
+        return NULL;
+    }
 
     spSkeletonJson_dispose(json);
 
