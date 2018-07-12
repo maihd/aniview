@@ -121,6 +121,25 @@ void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& 
 
         switch (slot->data->blendMode)
         {
+		case SP_BLEND_MODE_NORMAL:
+			glBlendEquation(GL_FUNC_ADD);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			break;
+
+		case SP_BLEND_MODE_MULTIPLY:
+			glBlendEquation(GL_FUNC_ADD);
+			glBlendFunc(GL_DST_COLOR, GL_ZERO);
+			break;
+
+		case SP_BLEND_MODE_ADDITIVE:
+			glBlendEquation(GL_FUNC_ADD);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+			break;
+
+		case SP_BLEND_MODE_SCREEN:
+			glBlendEquation(GL_FUNC_ADD);
+			glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+			break;
         }
 
         float r = spineAnimation.skeleton->r * slot->r;
