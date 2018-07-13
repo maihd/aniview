@@ -233,7 +233,7 @@ namespace Engine
                     SpineAnimation::Delete(spineAnimation);
 
                     spineAnimation = temp;
-                    SpineAnimation::Play(spineAnimation, "idle");
+                    SpineAnimation::Play(spineAnimation, 0);
                 }
             }
         }

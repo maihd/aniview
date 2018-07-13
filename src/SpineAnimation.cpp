@@ -200,21 +200,24 @@ void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& 
         {
             spMeshAttachment* meshAttachment = (spMeshAttachment*)attachment;
 
-            if (meshAttachment->super.worldVerticesLength > 2048) continue;
+            if (meshAttachment->super.worldVerticesLength > 2048 || meshAttachment->trianglesCount > 2048) continue;
 
             texture = (Texture*)((spAtlasRegion*)meshAttachment->rendererObject)->page->rendererObject;
 
             spVertexAttachment_computeWorldVertices(&meshAttachment->super, slot, worldVerticesPositions);
 
-            for (int i = 0; i < meshAttachment->trianglesCount; ++i)
+            for (int i = 0; i < meshAttachment->super.worldVerticesLength; i += 2)
             {
-                int index = meshAttachment->triangles[i] << 1;
+                AddVertex(worldVerticesPositions[i + 0], worldVerticesPositions[i + 1],
+                          meshAttachment->uvs[i + 0], meshAttachment->uvs[i + 1],
+                          r, g, b, a, &vertexIndex);
+            }
+
+            for (int i = 0; i < meshAttachment->trianglesCount; i++)
+            {
+                int index = meshAttachment->triangles[i];
                 
                 indices[indexCount++] = index;
-
-                AddVertex(worldVerticesPositions[index], worldVerticesPositions[index + 1],
-                          meshAttachment->uvs[index], meshAttachment->uvs[index + 1],
-                          r, g, b, a, &vertexIndex);
             }
         }
         else
