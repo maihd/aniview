@@ -1,14 +1,13 @@
 #include "Texture.h"
 
-#include <Windows.h>
-
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
-#include "memwise/membuf.h"
-#include "memwise/table.hpp"
+#include <riku/fs.h>
+#include <riku/string.h>
+#include <riku/dictionary.h>
 
-static table_t<const char*, Texture> textures(membuf_heap());
+static Dictionary<String, Texture> textures;
 
 void Texture::Create(Texture& texture)
 {
@@ -55,7 +54,7 @@ void Texture::SetPixels(Texture& texture, int width, int height, const void* pix
 
 bool Texture::Load(const char* path, Texture* outTexture, GLenum format, GLenum internalFormat)
 {
-    if (table::tryget(textures, path, *outTexture))
+    if (textures.try_get(path, outTexture))
     {
         return true;
     }
@@ -73,7 +72,7 @@ bool Texture::Load(const char* path, Texture* outTexture, GLenum format, GLenum 
         {
             outTexture[0] = texture;
         }
-        table::set(textures, path, texture);
+        textures.set(path, texture);
         stbi_image_free(pixels);
 
         return true;
@@ -87,10 +86,10 @@ bool Texture::Load(const char* path, Texture* outTexture, GLenum format, GLenum 
 bool Texture::Unload(const char* path)
 {
     Texture texture;
-    if (table::tryget(textures, path, texture))
+    if (textures.try_get(path, &texture))
     {
         Texture::Delete(texture);
-        table::remove(textures, path);
+        textures.remove(path);
         return true;
     }
     else
@@ -173,31 +172,27 @@ void _spAtlasPage_disposeTexture(spAtlasPage* self)
 
 char* _spUtil_readFile(const char* path, int* length)
 {
-    HANDLE file = CreateFileA(
-        path,
-        GENERIC_READ,
-        0, 
-        NULL,
-        OPEN_EXISTING,
-        FILE_ATTRIBUTE_NORMAL,
-        NULL
-    );
-    if (file != INVALID_HANDLE_VALUE)
+    FileHandle file = fs::open(path, FileOpen::Read);
+    if (file)
     {
-        DWORD number = GetFileSize(file, NULL);
-        char* buffer = (char*)malloc((number + 1) * sizeof(char));
+        fs::seek(file, FileSeek::End, 0);
+        int size = fs::tell(file);
+        fs::seek(file, FileSeek::Set, 0);
 
-        if (ReadFile(file, buffer, number, NULL, NULL))
+        char* buffer = (char*)malloc(size + 1);
+        if (fs::read(file, buffer, size) < 0)
         {
+            free(buffer);
+            return 0;
         }
-        CloseHandle(file);
-
-        if (length)
+        else
         {
-            *length = number;
+            if (length)
+            {
+                *length = size;
+            }
+            return buffer;
         }
-        buffer[number] = 0;
-        return buffer;
     }
     else
     {
@@ -205,6 +200,6 @@ char* _spUtil_readFile(const char* path, int* length)
         {
             *length = 0;
         }
-        return NULL;
+        return 0;
     }
 }

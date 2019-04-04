@@ -1,0 +1,3 @@
+﻿  Shader.cpp
+d:\aniview\src\shader.cpp(146): warning C4389: '==': signed/unsigned mismatch
+  aniview.vcxproj -> D:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\bin\aniview.debug.exe

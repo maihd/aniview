@@ -1,0 +1,7 @@
+﻿  sora_windows_core.cc
+  sora_windows_dialog.cc
+  sora_windows_window.cc
+  sora_windows_window_opengl.cc
+d:\aniview\3rdparty\sora\src\windows\sora_windows_dialog.cc(18): warning C4100: 'lParam': unreferenced formal parameter
+LINK : warning LNK4044: unrecognized option '/WHOLEARCHIVE'; ignored
+  sora.vcxproj -> D:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\bin\sora.debug.lib

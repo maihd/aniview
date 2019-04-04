@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{3E7DA5C5-2A4A-00D1-5363-EE783F8F355F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora">
+      <UniqueIdentifier>{2F39FD40-9BF9-7877-6434-C2F4D0B3BD53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora\include">
+      <UniqueIdentifier>{2F8B1E88-9BF7-D982-64EB-71E0D016FCEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora\include\sora">
+      <UniqueIdentifier>{C0A551FC-ACB5-FDCC-156F-62EB019EEC65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora\src">
+      <UniqueIdentifier>{D3A37882-3FBA-7618-8831-023AF48647A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora\src\glew_private">
+      <UniqueIdentifier>{3859CE24-247F-988B-0DC5-1D57F989BD57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\sora\src\windows">
+      <UniqueIdentifier>{BA74E465-2637-18F0-6FE7-A67CDBE8F0CD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdparty\sora\include\sora\core.h">
+      <Filter>3rdparty\sora\include\sora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\sora\include\sora\dialog.h">
+      <Filter>3rdparty\sora\include\sora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\sora\include\sora\window.h">
+      <Filter>3rdparty\sora\include\sora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\sora\src\glew_private\wglew.h">
+      <Filter>3rdparty\sora\src\glew_private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\sora\src\windows\window_private.h">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\glew_private\glew.c">
+      <Filter>3rdparty\sora\src\glew_private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_core.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_dialog.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_window.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_window_opengl.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

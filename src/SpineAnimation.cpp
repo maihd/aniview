@@ -1,26 +1,25 @@
 ﻿#include "SpineAnimation.h"
 
 #include "Texture.h"
-#include "memwise/membuf.h"
-#include "memwise/table.hpp"
 
-static table_t<const char*, spAtlas*>        atlases(membuf_heap());
-static table_t<const char*, spSkeletonData*> skeletonDatas(membuf_heap());
+#include <riku/string.h>
+#include <riku/dictionary.h>
+
+static Dictionary<String, spAtlas*>        atlases;
+static Dictionary<String, spSkeletonData*> skeletonDatas;
 
 static spAtlas* LoadAtlas(const char* path)
 {
     spAtlas* atlas;
-#if 0
-    if (table::tryget(atlases, path, atlas))
+    if (atlases.try_get(path, &atlas))
     {
         return atlas;
     }
-#endif
 
     atlas = spAtlas_createFromFile(path, NULL);
     if (atlas)
     {
-        table::set(atlases, path, atlas);
+        atlases.set(path, atlas);
     }
     return atlas;
 }
@@ -28,12 +27,10 @@ static spAtlas* LoadAtlas(const char* path)
 static spSkeletonData* LoadDataFromJson(spAtlas* atlas, const char* path)
 {
     spSkeletonData* data;
-#if 0
-    if (table::tryget(skeletonDatas, path, data))
+    if (skeletonDatas.try_get(path, &data))
     {
         return data;
     }
-#endif
 
     spAtlasAttachmentLoader* loader = spAtlasAttachmentLoader_create(atlas);
     spSkeletonJson* json = spSkeletonJson_createWithLoader(&loader->super);
@@ -41,10 +38,10 @@ static spSkeletonData* LoadDataFromJson(spAtlas* atlas, const char* path)
     data = spSkeletonJson_readSkeletonDataFile(json, path);
     if (!data)
     {
-        table::set(skeletonDatas, path, data);
         return NULL;
     }
 
+    skeletonDatas.set(path, data);
     spSkeletonJson_dispose(json);
 
     return data;
@@ -113,15 +110,15 @@ static void AddVertex(float x, float y, float u, float v, float r, float g, floa
     vertex.pos.y = y;
     vertex.uv.x = u;
     vertex.uv.y = v;
-    vertex.color.r = r;
-    vertex.color.g = g;
-    vertex.color.b = b;
-    vertex.color.a = a;
+    vertex.color.x = r;
+    vertex.color.y = g;
+    vertex.color.z = b;
+    vertex.color.w = a;
 
     *index += 1;
 }
 
-void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader, const mat4& transform)
+void SpineAnimation::Render(SpineAnimation& spineAnimation, Mesh& mesh, Shader& shader, const float4x4& transform)
 {
     Shader::Install(shader);
     Shader::SetUniform(shader, "SpineView_MVP", transform);
@@ -286,11 +283,11 @@ bool SpineAnimation::AnimationNames(SpineAnimation& spineAnimation, char* names[
 {
     if (spineAnimation.skeleton)
     {
-        count = min(count, SpineAnimation::AnimationCount(spineAnimation));
+        count = math::min(count, SpineAnimation::AnimationCount(spineAnimation));
         spAnimation** animations = spineAnimation.skeleton->data->animations;
         for (int i = 0; i < count; i++)
         {
-            strcpy(names[i], animations[i]->name);
+            string::copy(names[i], animations[i]->name);
         }
         return true;
     }

@@ -1,11 +1,8 @@
 #include "system.h"
 
-extern "C"
-{
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-}
 
 namespace System
 {

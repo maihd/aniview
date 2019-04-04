@@ -1,13 +1,11 @@
 #include "Shader.h"
 #include "System.h"
 
-#include "memwise/membuf.h"
-#include "memwise//table.hpp"
+#include <riku/fs.h>
+#include <riku/string.h>
+#include <riku/dictionary.h>
 
-#include <stdio.h>
-#include <Windows.h>
-
-static table_t<const char*, Shader> shaders(membuf_heap());
+static Dictionary<String, Shader> shaders;
 
 static GLuint CreateGLShader(GLenum type, const char* src)
 {
@@ -32,33 +30,27 @@ static GLuint CreateGLShader(GLenum type, const char* src)
 
 static GLuint CreateGLShaderFromFile(GLenum type, const char* path)
 {
-    HANDLE file = CreateFileA(
-        path,
-        GENERIC_READ,
-        0,
-        NULL,
-        OPEN_EXISTING,
-        FILE_ATTRIBUTE_NORMAL,
-        NULL
-    );
-    if (file != INVALID_HANDLE_VALUE)
+    FileHandle file = fs::open(path, FileOpen::Read);
+    if (file)
     {
-        DWORD length = GetFileSize(file, NULL);
-        char* source = (char*)malloc(sizeof(char) * (length + 1));
+        fs::seek(file, FileSeek::End, 0);
+        int length = fs::tell(file);
+        fs::seek(file, FileSeek::Set, 0);
 
-        if (!ReadFile(file, source, length, NULL, NULL))
+        char* source = (char*)memory::alloc(length + 1);
+        if (fs::read(file, source, length) < 0)
         {
             free(source);
             return 0;
         }
         else
         {
-            CloseHandle(file);
-            source[length] = 0;
+            fs::close(file);
 
+            source[length] = 0;
             GLuint shader = CreateGLShader(type, source);
 
-            free(source);
+            memory::dealloc(source);
             return shader;
         }
     }
@@ -71,7 +63,7 @@ static GLuint CreateGLShaderFromFile(GLenum type, const char* path)
 bool Shader::Load(const char* path, Shader* outShader)
 {
     Shader shader;
-    if (table::tryget(shaders, path, shader))
+    if (shaders.try_get(path, &shader))
     {
         if (outShader)
         {
@@ -82,8 +74,8 @@ bool Shader::Load(const char* path, Shader* outShader)
 
     char vshaderPath[1024];
     char fshaderPath[1024];
-    sprintf(vshaderPath, "%s.vert", path);
-    sprintf(fshaderPath, "%s.frag", path);
+    string::format(vshaderPath, sizeof(vshaderPath), "%s.vert", path);
+    string::format(fshaderPath, sizeof(fshaderPath), "%s.frag", path);
 
     GLuint vshader = CreateGLShaderFromFile(GL_VERTEX_SHADER, vshaderPath);
     GLuint fshader = CreateGLShaderFromFile(GL_FRAGMENT_SHADER, fshaderPath);
@@ -127,10 +119,10 @@ bool Shader::Load(const char* path, Shader* outShader)
 bool Shader::Unload(const char* path)
 {
     Shader shader;
-    if (table::tryget(shaders, path, shader))
+    if (shaders.try_get(path, &shader))
     {
         glDeleteProgram(shader.handle);
-        table::remove(shaders, path);
+        shaders.remove(path);
         return true;
     }
     else
@@ -157,7 +149,7 @@ void Shader::Uninstall(Shader& shader)
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const vec2& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float2& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
@@ -166,7 +158,7 @@ void Shader::SetUniform(Shader& shader, const char* name, const vec2& value)
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const vec3& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float3& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
@@ -175,7 +167,7 @@ void Shader::SetUniform(Shader& shader, const char* name, const vec3& value)
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const vec4& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float4& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
@@ -184,29 +176,29 @@ void Shader::SetUniform(Shader& shader, const char* name, const vec4& value)
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const mat2& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float2x2& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
     {
-        glUniformMatrix2fv(location, 1, GL_FALSE, value);
+        glUniformMatrix2fv(location, 1, GL_FALSE, (const float*)&value);
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const mat3& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float3x3& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
     {
-        glUniformMatrix3fv(location, 1, GL_FALSE, value);
+        glUniformMatrix3fv(location, 1, GL_FALSE, (const float*)&value);
     }
 }
 
-void Shader::SetUniform(Shader& shader, const char* name, const mat4& value)
+void Shader::SetUniform(Shader& shader, const char* name, const float4x4& value)
 {
     GLint location = glGetUniformLocation(shader.handle, name);
     if (location >= 0)
     {
-        glUniformMatrix4fv(location, 1, GL_FALSE, value);
+        glUniformMatrix4fv(location, 1, GL_FALSE, (const float*)&value);
     }
 }

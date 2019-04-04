@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\imgui">
+      <UniqueIdentifier>{A4CA5D1E-1035-1295-5973-C33AC51CF0E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\imgui_impl">
+      <UniqueIdentifier>{559B0C58-4169-005E-2AFD-7084166ADCC2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\spine">
+      <UniqueIdentifier>{686C141F-D4D6-C895-1D15-7A3B89BEA6EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\stb">
+      <UniqueIdentifier>{12E548A9-7EC4-C744-87DC-521BF33A2EA6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\IconFontsAwesome5.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Mesh.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Shader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SpineAnimation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\System.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Texture.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Timer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\imconfig.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\imgui.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\imgui_internal.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\stb_rect_pack.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\stb_textedit.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui\stb_truetype.h">
+      <Filter>src\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\imgui_impl\ImGuiExtensions.h">
+      <Filter>src\imgui_impl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Animation.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\AnimationState.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\AnimationStateData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Atlas.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\AtlasAttachmentLoader.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Attachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\AttachmentLoader.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Bone.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\BoneData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\BoundingBoxAttachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Event.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\EventData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\extension.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\IkConstraint.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\IkConstraintData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Json.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\kvec.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\MeshAttachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\PathAttachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\PathConstraint.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\PathConstraintData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\RegionAttachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Skeleton.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\SkeletonBinary.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\SkeletonBounds.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\SkeletonData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\SkeletonJson.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Skin.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\Slot.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\SlotData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\spine.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\TransformConstraint.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\TransformConstraintData.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\spine\VertexAttachment.h">
+      <Filter>src\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\stb\stb_image.h">
+      <Filter>src\stb</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Mesh.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Shader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SpineAnimation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\System.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Texture.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Animation.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AnimationState.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AnimationStateData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Atlas.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AtlasAttachmentLoader.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Attachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AttachmentLoader.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Bone.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\BoneData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\BoundingBoxAttachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Event.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\EventData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\extension.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\IkConstraint.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\IkConstraintData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Json.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\MeshAttachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathAttachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathConstraint.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathConstraintData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\RegionAttachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Skeleton.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonBinary.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonBounds.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonJson.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Skin.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Slot.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SlotData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\TransformConstraint.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\TransformConstraintData.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\VertexAttachment.c">
+      <Filter>src\spine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui.cpp">
+      <Filter>src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui_demo.cpp">
+      <Filter>src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui_draw.cpp">
+      <Filter>src\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui_impl\ImGuiExtensions.cpp">
+      <Filter>src\imgui_impl</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{78A5D636-E484-55D2-ED9C-E0A859FBBB33}</ProjectGuid>
+    <RootNamespace>aniview</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <OutDir>..\..\windows_x32_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\obj\x32\debug\aniview\</IntDir>
+    <TargetName>aniview.debug</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <OutDir>..\..\windows_x64_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x64_vs2017\obj\x64\debug\aniview\</IntDir>
+    <TargetName>aniview.debug</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <OutDir>..\..\windows_x32_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\obj\x32\release\aniview\</IntDir>
+    <TargetName>aniview</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <OutDir>..\..\windows_x64_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x64_vs2017\obj\x64\release\aniview\</IntDir>
+    <TargetName>aniview</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)aniview.debug.compile.pdb</ProgramDataBaseFileName>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)aniview.debug.pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>gdi32.lib;user32.lib;kernel32.lib;opengl32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\3rdparty\lib\windows_x32_vs2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)aniview.debug.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)aniview.debug.compile.pdb</ProgramDataBaseFileName>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)aniview.debug.pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>gdi32.lib;user32.lib;kernel32.lib;opengl32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\3rdparty\lib\windows_x64_vs2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)aniview.debug.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>gdi32.lib;user32.lib;kernel32.lib;opengl32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\3rdparty\lib\windows_x32_vs2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)aniview.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\3rdparty\riku\include;..\..\..\3rdparty\sora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>gdi32.lib;user32.lib;kernel32.lib;opengl32.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\3rdparty\lib\windows_x64_vs2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)aniview.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\IconFontsAwesome5.h" />
+    <ClInclude Include="..\..\..\src\Mesh.h" />
+    <ClInclude Include="..\..\..\src\Shader.h" />
+    <ClInclude Include="..\..\..\src\SpineAnimation.h" />
+    <ClInclude Include="..\..\..\src\System.h" />
+    <ClInclude Include="..\..\..\src\Texture.h" />
+    <ClInclude Include="..\..\..\src\Timer.h" />
+    <ClInclude Include="..\..\..\src\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\src\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\src\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\src\imgui\stb_rect_pack.h" />
+    <ClInclude Include="..\..\..\src\imgui\stb_textedit.h" />
+    <ClInclude Include="..\..\..\src\imgui\stb_truetype.h" />
+    <ClInclude Include="..\..\..\src\imgui_impl\ImGuiExtensions.h" />
+    <ClInclude Include="..\..\..\src\spine\Animation.h" />
+    <ClInclude Include="..\..\..\src\spine\AnimationState.h" />
+    <ClInclude Include="..\..\..\src\spine\AnimationStateData.h" />
+    <ClInclude Include="..\..\..\src\spine\Atlas.h" />
+    <ClInclude Include="..\..\..\src\spine\AtlasAttachmentLoader.h" />
+    <ClInclude Include="..\..\..\src\spine\Attachment.h" />
+    <ClInclude Include="..\..\..\src\spine\AttachmentLoader.h" />
+    <ClInclude Include="..\..\..\src\spine\Bone.h" />
+    <ClInclude Include="..\..\..\src\spine\BoneData.h" />
+    <ClInclude Include="..\..\..\src\spine\BoundingBoxAttachment.h" />
+    <ClInclude Include="..\..\..\src\spine\Event.h" />
+    <ClInclude Include="..\..\..\src\spine\EventData.h" />
+    <ClInclude Include="..\..\..\src\spine\extension.h" />
+    <ClInclude Include="..\..\..\src\spine\IkConstraint.h" />
+    <ClInclude Include="..\..\..\src\spine\IkConstraintData.h" />
+    <ClInclude Include="..\..\..\src\spine\Json.h" />
+    <ClInclude Include="..\..\..\src\spine\kvec.h" />
+    <ClInclude Include="..\..\..\src\spine\MeshAttachment.h" />
+    <ClInclude Include="..\..\..\src\spine\PathAttachment.h" />
+    <ClInclude Include="..\..\..\src\spine\PathConstraint.h" />
+    <ClInclude Include="..\..\..\src\spine\PathConstraintData.h" />
+    <ClInclude Include="..\..\..\src\spine\RegionAttachment.h" />
+    <ClInclude Include="..\..\..\src\spine\Skeleton.h" />
+    <ClInclude Include="..\..\..\src\spine\SkeletonBinary.h" />
+    <ClInclude Include="..\..\..\src\spine\SkeletonBounds.h" />
+    <ClInclude Include="..\..\..\src\spine\SkeletonData.h" />
+    <ClInclude Include="..\..\..\src\spine\SkeletonJson.h" />
+    <ClInclude Include="..\..\..\src\spine\Skin.h" />
+    <ClInclude Include="..\..\..\src\spine\Slot.h" />
+    <ClInclude Include="..\..\..\src\spine\SlotData.h" />
+    <ClInclude Include="..\..\..\src\spine\spine.h" />
+    <ClInclude Include="..\..\..\src\spine\TransformConstraint.h" />
+    <ClInclude Include="..\..\..\src\spine\TransformConstraintData.h" />
+    <ClInclude Include="..\..\..\src\spine\VertexAttachment.h" />
+    <ClInclude Include="..\..\..\src\stb\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Main.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Mesh.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Shader.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SpineAnimation.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\System.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Texture.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Animation.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AnimationState.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AnimationStateData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Atlas.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AtlasAttachmentLoader.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Attachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\AttachmentLoader.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Bone.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\BoneData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\BoundingBoxAttachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Event.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\EventData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\extension.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\IkConstraint.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\IkConstraintData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Json.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\MeshAttachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathAttachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathConstraint.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\PathConstraintData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\RegionAttachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Skeleton.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonBinary.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonBounds.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SkeletonJson.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Skin.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\Slot.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\SlotData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\TransformConstraint.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\TransformConstraintData.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\spine\VertexAttachment.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui_demo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui\imgui_draw.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui_impl\ImGuiExtensions.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="riku.vcxproj">
+      <Project>{A05F9D7C-8C96-9E0D-3583-841021991A0F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="sora.vcxproj">
+      <Project>{5A069E7C-463D-9F0D-EF29-8510DB3F1B0F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,10 +1,8 @@
 #ifndef __SHADER_H__
 #define __SHADER_H__
 
-#include <assert.h>
 #include <GL/glew.h>
-
-#include "vmath/vmath.h"
+#include <riku/gmath.h>
 
 struct Shader
 {
@@ -28,12 +26,12 @@ public:
     static void Install(Shader& shader);
     static void Uninstall(Shader& shader);
     
-    static void SetUniform(Shader& shader, const char* name, const vec2& value);
-    static void SetUniform(Shader& shader, const char* name, const vec3& value);
-    static void SetUniform(Shader& shader, const char* name, const vec4& value);
-    static void SetUniform(Shader& shader, const char* name, const mat2& value);
-    static void SetUniform(Shader& shader, const char* name, const mat3& value);
-    static void SetUniform(Shader& shader, const char* name, const mat4& value);
+    static void SetUniform(Shader& shader, const char* name, const float2& value);
+    static void SetUniform(Shader& shader, const char* name, const float3& value);
+    static void SetUniform(Shader& shader, const char* name, const float4& value);
+    static void SetUniform(Shader& shader, const char* name, const float2x2& value);
+    static void SetUniform(Shader& shader, const char* name, const float3x3& value);
+    static void SetUniform(Shader& shader, const char* name, const float4x4& value);
 };
 
 #endif /* __SHADER_H__ */

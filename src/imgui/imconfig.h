@@ -50,14 +50,14 @@
 
 //---- Define constructor and implicit cast operators to convert back<>forth from your math types and ImVec2/ImVec4.
 // This will be inlined as part of ImVec2 and ImVec4 class declarations.
-#include "../vmath/vmath.h"
-#define IM_VEC2_CLASS_EXTRA                                               \
-        ImVec2(const vec2& f) { x = f.x; y = f.y;  }                      \
-        operator vec2() const { return vec2(x, y); }
-
-#define IM_VEC4_CLASS_EXTRA                                               \
-        ImVec4(const vec4& f) { x = f.x; y = f.y; z = f.z; w = f.w; }     \
-        operator vec4() const { return vec4(x, y, z, w);            }
+//#include <riku/gmath.h>
+//#define IM_VEC2_CLASS_EXTRA                                               \
+//        ImVec2(const float2& f) { x = f.x; y = f.y;  }                      \
+//        operator float2() const { return float2(x, y); }
+//
+//#define IM_VEC4_CLASS_EXTRA                                               \
+//        ImVec4(const float4& f) { x = f.x; y = f.y; z = f.z; w = f.w; }     \
+//        operator float4() const { return float4(x, y, z, w);            }
 
 //---- Use 32-bit vertex indices (default is 16-bit) to allow meshes with more than 64K vertices. Render function needs to support it.
 //#define ImDrawIdx unsigned int

@@ -1,0 +1,6 @@
+[submodule "3rdparty/sora"]
+	path = 3rdparty/sora
+	url = https://github.com/maihd/sora
+[submodule "3rdparty/riku"]
+	path = 3rdparty/riku
+	url = https://github.com/maihd/riku

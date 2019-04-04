@@ -1,6 +1,8 @@
 #ifndef __IMGUI_EXTENSIONS_H__
 #define __IMGUI_EXTENSIONS_H__
 
+#include "../imgui/imgui.h"
+
 namespace ImGui
 {
 	IMGUI_API bool FileDialog(const char* title, char* buffer, int length, const char* filter = "All\0*.*\0");

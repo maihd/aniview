@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A05F9D7C-8C96-9E0D-3583-841021991A0F}</ProjectGuid>
+    <RootNamespace>riku</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <OutDir>..\..\windows_x32_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\obj\x32\debug\riku\</IntDir>
+    <TargetName>riku.debug</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <OutDir>..\..\windows_x64_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x64_vs2017\obj\x64\debug\riku\</IntDir>
+    <TargetName>riku.debug</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <OutDir>..\..\windows_x32_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\obj\x32\release\riku\</IntDir>
+    <TargetName>riku</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <OutDir>..\..\windows_x64_vs2017\bin\</OutDir>
+    <IntDir>d:\aniview\build\projects\vs2017\..\..\windows_x64_vs2017\obj\x64\release\riku\</IntDir>
+    <TargetName>riku</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)riku.debug.pdb</ProgramDataBaseFileName>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)riku.debug.lib</OutputFile>
+    <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    <TargetMachine>MachineX86</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)riku.debug.pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)riku.debug.pdb</ProgramDataBaseFileName>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;_DEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)riku.debug.lib</OutputFile>
+    <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    <TargetMachine>MachineX64</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)riku.debug.pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat></DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)riku.lib</OutputFile>
+    <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    <TargetMachine>MachineX86</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/wd4201 /wd4324 /Ob2  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat></DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;NDEBUG;WIN32;_WIN32;_HAS_EXCEPTIONS=0;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE=0;_SECURE_SCL=0;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\3rdparty\riku\include;..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)riku.lib</OutputFile>
+    <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+    <TargetMachine>MachineX64</TargetMachine>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\array.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\buffer.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\core.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\crypto.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\date.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\dictionary.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\dylib.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\events.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\fs.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\func.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\hash_table.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\json.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\list.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\math.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\net.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\os.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\path.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\stream.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\string.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\thread.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\zlib.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\base.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool2x2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool3x3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool4x4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float2x2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float3x3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float4x4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int2x2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int3x3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int4x4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint2x2.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint3x3.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint4x4.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\alloc.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\pointer.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\smart_array.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\table.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\crc32.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzguts.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffixed.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\trees.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zconf.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zlib.h" />
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_buffer.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_core.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_crypto.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_date.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_dylib.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_fs.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_gmath.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_json.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_math.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_memory.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_net.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_os.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_path.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_stream.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_string.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_thread.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_zlib.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\adler32.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\compress.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\crc32.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzclose.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\trees.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zutil.c">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\windows\riku_windows_fiber.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\windows\riku_windows_fs.cc">
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

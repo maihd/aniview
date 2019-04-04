@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{3E7DA5C5-2A4A-00D1-5363-EE783F8F355F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku">
+      <UniqueIdentifier>{7592FC40-E152-7877-AA8D-C1F4160DBD53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\src">
+      <UniqueIdentifier>{19306FB9-8546-6D4F-CEBD-F8703A133ED7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\include">
+      <UniqueIdentifier>{75CA6D34-E136-292F-AA2A-C18C16564B97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\include\riku">
+      <UniqueIdentifier>{0CBA484A-F8C9-F41A-6183-59394DB2E3B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\include\riku\gmath">
+      <UniqueIdentifier>{19FA462A-054B-326C-2EAF-202E1A5FC5D5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\include\riku\previewing">
+      <UniqueIdentifier>{C82F89A9-34F4-8799-FD59-B86369DD23CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\3rdparty">
+      <UniqueIdentifier>{AAF5BF22-96EF-E874-7F5C-7F856BF54EE1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\3rdparty\zlib-1.2.11">
+      <UniqueIdentifier>{05D770F2-F112-745C-5A25-8C5346801C77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty\riku\src\windows">
+      <UniqueIdentifier>{00E7AD1A-6CA9-E1A4-B559-7031215BBA82}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\array.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\buffer.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\core.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\crypto.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\date.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\dictionary.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\dylib.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\events.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\fs.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\func.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\hash_table.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\json.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\list.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\math.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\net.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\os.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\path.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\stream.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\string.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\thread.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\zlib.h">
+      <Filter>3rdparty\riku\include\riku</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\base.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool2x2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool3x3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\bool4x4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float2x2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float3x3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\float4x4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int2x2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int3x3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\int4x4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint2x2.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint3x3.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\gmath\uint4x4.h">
+      <Filter>3rdparty\riku\include\riku\gmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\alloc.h">
+      <Filter>3rdparty\riku\include\riku\previewing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\pointer.h">
+      <Filter>3rdparty\riku\include\riku\previewing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\smart_array.h">
+      <Filter>3rdparty\riku\include\riku\previewing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\include\riku\previewing\table.h">
+      <Filter>3rdparty\riku\include\riku\previewing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\crc32.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzguts.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffixed.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\trees.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zconf.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zlib.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zutil.h">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_buffer.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_core.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_crypto.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_date.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_dylib.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_fs.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_gmath.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_json.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_math.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_memory.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_net.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_os.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_path.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_stream.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_string.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_thread.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\riku_zlib.cc">
+      <Filter>3rdparty\riku\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\adler32.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\compress.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\crc32.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzclose.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\trees.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\3rdparty\zlib-1.2.11\zutil.c">
+      <Filter>3rdparty\riku\3rdparty\zlib-1.2.11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\windows\riku_windows_fiber.cc">
+      <Filter>3rdparty\riku\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\riku\src\windows\riku_windows_fs.cc">
+      <Filter>3rdparty\riku\src\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

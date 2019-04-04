@@ -2,17 +2,16 @@
 #define __MESH_H__
 
 #include <GL/glew.h>
-
-#include "vmath/vmath.h"
+#include <riku/gmath.h>
 
 struct Mesh
 {
 public:
     struct Vertex
     {
-        vec2 pos;
-        vec2 uv;
-        vec4 color;
+        float2 pos;
+        float2 uv;
+        float4 color;
     };
 
 public:
