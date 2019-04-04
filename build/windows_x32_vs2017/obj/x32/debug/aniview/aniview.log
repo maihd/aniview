@@ -1,3 +1,75 @@
-﻿  Shader.cpp
-d:\aniview\src\shader.cpp(146): warning C4389: '==': signed/unsigned mismatch
+﻿  Main.cpp
+  ImGuiImpl.cpp
+d:\aniview\src\main.cpp(31): warning C4100: 'argv': unreferenced formal parameter
+d:\aniview\src\main.cpp(31): warning C4100: 'argc': unreferenced formal parameter
+d:\aniview\src\main.cpp(62): warning C4189: 'totalTime': local variable is initialized but not referenced
+d:\aniview\src\main.cpp(124): warning C4459: declaration of 'window' hides global declaration
+  d:\aniview\src\main.cpp(120): note: see declaration of 'Engine::window'
+d:\aniview\src\main.cpp(136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\aniview\src\main.cpp(232): warning C4100: 'deltaTime': unreferenced formal parameter
+d:\aniview\src\imgui_impl\imguiimpl.cpp(151): warning C4189: 'io': local variable is initialized but not referenced
+d:\aniview\src\imgui_impl\imguiimpl.cpp(390): warning C4101: 'my': unreferenced local variable
+d:\aniview\src\imgui_impl\imguiimpl.cpp(390): warning C4101: 'mx': unreferenced local variable
+     Creating library ..\..\windows_x32_vs2017\bin\aniview.debug.lib and object ..\..\windows_x32_vs2017\bin\aniview.debug.exp
+Mesh.obj : warning LNK4049: locally defined symbol ___glewBindBuffer imported
+SpineAnimation.obj : warning LNK4049: locally defined symbol ___glewBindBuffer imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBindBuffer imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewBufferData imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBufferData imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewDeleteBuffers imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewDeleteBuffers imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewGenBuffers imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewGenBuffers imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewEnableVertexAttribArray imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewEnableVertexAttribArray imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewVertexAttribPointer imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewVertexAttribPointer imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewBindVertexArray imported
+SpineAnimation.obj : warning LNK4049: locally defined symbol ___glewBindVertexArray imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBindVertexArray imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewDeleteVertexArrays imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewDeleteVertexArrays imported
+Mesh.obj : warning LNK4049: locally defined symbol ___glewGenVertexArrays imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewGenVertexArrays imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewAttachShader imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewAttachShader imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewCompileShader imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewCompileShader imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewCreateProgram imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewCreateProgram imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewCreateShader imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewCreateShader imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewDeleteProgram imported
+ImGuiImpl.obj : warning LNK4217: locally defined symbol ___glewDeleteProgram imported in function "void __cdecl ImGuiImpl::RenderDrawData(struct ImDrawData *)" (?RenderDrawData@ImGuiImpl@@YAXPAUImDrawData@@@Z)
+Shader.obj : warning LNK4049: locally defined symbol ___glewDeleteShader imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewDeleteShader imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewGetProgramInfoLog imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewGetProgramiv imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewGetShaderInfoLog imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewGetShaderiv imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewGetUniformLocation imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewGetUniformLocation imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewLinkProgram imported
+ImGuiImpl.obj : warning LNK4217: locally defined symbol ___glewLinkProgram imported in function "void __cdecl ImGuiImpl::RenderDrawData(struct ImDrawData *)" (?RenderDrawData@ImGuiImpl@@YAXPAUImDrawData@@@Z)
+Shader.obj : warning LNK4049: locally defined symbol ___glewShaderSource imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewShaderSource imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniform2f imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniform3f imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniform4f imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniformMatrix2fv imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniformMatrix3fv imported
+Shader.obj : warning LNK4049: locally defined symbol ___glewUniformMatrix4fv imported
+ImGuiImpl.obj : warning LNK4217: locally defined symbol ___glewUniformMatrix4fv imported in function "void __cdecl ImGuiImpl::RenderDrawData(struct ImDrawData *)" (?RenderDrawData@ImGuiImpl@@YAXPAUImDrawData@@@Z)
+Shader.obj : warning LNK4049: locally defined symbol ___glewUseProgram imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewUseProgram imported
+SpineAnimation.obj : warning LNK4049: locally defined symbol ___glewActiveTexture imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewActiveTexture imported
+SpineAnimation.obj : warning LNK4049: locally defined symbol ___glewBlendEquation imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBlendEquation imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBlendFuncSeparate imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBlendEquationSeparate imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewDetachShader imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewGetAttribLocation imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewUniform1i imported
+ImGuiImpl.obj : warning LNK4049: locally defined symbol ___glewBindSampler imported
   aniview.vcxproj -> D:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\bin\aniview.debug.exe

@@ -2,6 +2,7 @@
 #include <sora/window.h>
 
 #include "imgui/imgui.h"
+#include "imgui_impl/ImGuiImpl.h"
 
 #include "System.h"
 #include "Shader.h"
@@ -73,7 +74,7 @@ int main(int argc, char* argv[])
             }
             else
             {
-                //ImGuiImpl::ProcessEvent(&event);
+                ImGuiImpl::ProcessEvent(&event);
             }
         }
         if (event.type == WindowEventType::Quit)
@@ -91,7 +92,7 @@ int main(int argc, char* argv[])
             Engine::Update(deltaTime, 0.0f);
         }
 
-        //Engine::OnGUI(deltaTime);
+        Engine::OnGUI(deltaTime);
 
         glClear(GL_COLOR_BUFFER_BIT);
         Engine::Render();
@@ -134,19 +135,19 @@ namespace Engine
 
         projMatrix = float4x4::ortho(-width * 0.5f, width * 0.5f, 0, height, -10, 10);
 
-        //ImGuiContext* context = ImGui::CreateContext();
-        //(void)context;
+        ImGuiContext* context = ImGui::CreateContext();
+        (void)context;
 
-        //ImGuiIO& io = ImGui::GetIO();
-        //io.Fonts->AddFontDefault();
+        ImGuiIO& io = ImGui::GetIO();
+        io.Fonts->AddFontDefault();
 
-        //ImFontConfig fontConfig;
-        //fontConfig.MergeMode = true;
-        //fontConfig.GlyphMinAdvanceX = 13.0f;
-        //static const ImWchar iconRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
-        //io.Fonts->AddFontFromFileTTF("../../../res/Fonts/fa-solid-900.ttf", 13.0f, &fontConfig, iconRanges);
+        ImFontConfig fontConfig;
+        fontConfig.MergeMode = true;
+        fontConfig.GlyphMinAdvanceX = 13.0f;
+        static const ImWchar iconRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
+        io.Fonts->AddFontFromFileTTF("../../../res/Fonts/fa-solid-900.ttf", 13.0f, &fontConfig, iconRanges);
 
-        //ImGuiImpl::Init(window);
+        ImGuiImpl::Init(window);
 
         SpineAnimation::Create(spineAnimation, "../../../res/spineboy.atlas", "../../../res/spineboy.json");
         SpineAnimation::Play(spineAnimation, 0);
@@ -162,7 +163,7 @@ namespace Engine
 
     void OnGUI(float deltaTime)
     {
-        //ImGuiImpl::NewFrame(window, deltaTime);
+        ImGuiImpl::NewFrame(window, deltaTime);
 
     #if 1
         ImGui::Text("Debug information");
@@ -200,10 +201,10 @@ namespace Engine
             }
 
             static char atlasPath[1024] = "../../../res/spineboy.atlas";
-            //ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas\0*.atlas\0");
+            ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas\0*.atlas\0");
 
             static char jsonPath[1024] = "../../../res/spineboy.json";
-            //ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json\0*.json\0");
+            ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json\0*.json\0");
 
             if (ImGui::Button("Change File"))
             {
@@ -225,7 +226,7 @@ namespace Engine
     void Render(void)
     {
         SpineAnimation::Render(spineAnimation, mesh, defaultShader, projMatrix);
-        //ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
+        ImGuiImpl::RenderDrawData(ImGui::GetDrawData());
     }
 
     void Update(float deltaTime, float fixedDeltaTime)

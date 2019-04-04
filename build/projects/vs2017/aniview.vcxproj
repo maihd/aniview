@@ -106,8 +106,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
@@ -145,8 +144,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
@@ -184,16 +182,14 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
+      <DebugInformationFormat></DebugInformationFormat>
       <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <ResourceCompile>
@@ -225,15 +221,13 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
+      <DebugInformationFormat></DebugInformationFormat>
       <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <ResourceCompile>
@@ -255,6 +249,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\IconFontsAwesome5.h" />
+    <ClInclude Include="..\..\..\src\Logger.h" />
     <ClInclude Include="..\..\..\src\Mesh.h" />
     <ClInclude Include="..\..\..\src\Shader.h" />
     <ClInclude Include="..\..\..\src\SpineAnimation.h" />
@@ -268,6 +263,7 @@
     <ClInclude Include="..\..\..\src\imgui\stb_textedit.h" />
     <ClInclude Include="..\..\..\src\imgui\stb_truetype.h" />
     <ClInclude Include="..\..\..\src\imgui_impl\ImGuiExtensions.h" />
+    <ClInclude Include="..\..\..\src\imgui_impl\ImGuiImpl.h" />
     <ClInclude Include="..\..\..\src\spine\Animation.h" />
     <ClInclude Include="..\..\..\src\spine\AnimationState.h" />
     <ClInclude Include="..\..\..\src\spine\AnimationStateData.h" />
@@ -305,6 +301,8 @@
     <ClInclude Include="..\..\..\src\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\Logger.cpp">
+    </ClCompile>
     <ClCompile Include="..\..\..\src\Main.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\Mesh.cpp">
@@ -388,6 +386,8 @@
     <ClCompile Include="..\..\..\src\imgui\imgui_draw.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\imgui_impl\ImGuiExtensions.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\imgui_impl\ImGuiImpl.cpp">
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
