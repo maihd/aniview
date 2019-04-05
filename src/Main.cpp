@@ -30,7 +30,7 @@ namespace Engine
 
 int main(int argc, char* argv[])
 {
-    Window* window = Window::create("SpineView", 1280, 720, WindowFlags::Visible | WindowFlags::OpenGL);
+    Window* window = Window::create("Aniview", 1280, 720, WindowFlags::Visible | WindowFlags::OpenGL);
     if (!window || !window->make_current())
     {
         //System::Error("SDL_CreateWindow(): %s", SDL_GetError());
@@ -46,29 +46,36 @@ int main(int argc, char* argv[])
     //    System::Error("SDL_GL_CreateContext(): %s", SDL_GetError());
     //    return 1;
     //}
-
-    //GLenum glewStatus = glewInit();
-    //if (glewStatus != GLEW_OK)
-    //{
-    //    System::Error("glewInit(): %s", glewGetErrorString(glewStatus));
-    //    return 1;
-    //}
     
     Engine::Init(window);
 
     WindowEvent event;
 
+    long  ticks       = performance::now();
+    long  delta_ticks = performance::now();
+    long  limit_ticks = performance::frequency() / 60;
     float deltaTime = 0.0f;
     float totalTime = 0.0f;
     float fixedStepTimer = 0.0f;
     float fixedDeltaTime = 1.0f / 40; // Animation run in 40fps
     while (true)
     {
-        //Timer::NewFrame(timer);
-
-        while (Window::poll_event(&event))
+        delta_ticks = performance::now() - ticks;
+        if (delta_ticks < limit_ticks)
         {
-            if (event.type == WindowEventType::Quit)
+            double sleep_time = double(limit_ticks - delta_ticks) / (performance::frequency());
+            delta_ticks = limit_ticks;
+            performance::usleep((long)(sleep_time * 1000 * 1000));
+        }
+        ticks = ticks + delta_ticks;
+
+        deltaTime = float(delta_ticks) / (performance::frequency());
+        totalTime = totalTime + deltaTime;
+        fixedStepTimer += deltaTime;
+
+        while (WindowEvent::poll_event(&event))
+        {
+            if (event.type == WindowEvent::Quit)
             {
                 break;
             }
@@ -77,7 +84,7 @@ int main(int argc, char* argv[])
                 ImGuiImpl::ProcessEvent(&event);
             }
         }
-        if (event.type == WindowEventType::Quit)
+        if (event.type == WindowEvent::Quit)
         {
             break;
         }
@@ -97,13 +104,6 @@ int main(int argc, char* argv[])
         glClear(GL_COLOR_BUFFER_BIT);
         Engine::Render();
         window->swap_buffers();
-
-        //Timer::EndFrame(timer);
-        //Timer::Sleep(timer);
-
-        //deltaTime = (float)Timer::Seconds(timer);
-        //totalTime = totalTime + deltaTime;
-        //fixedStepTimer += deltaTime;
     }
     
     Engine::Quit();
@@ -135,8 +135,7 @@ namespace Engine
 
         projMatrix = float4x4::ortho(-width * 0.5f, width * 0.5f, 0, height, -10, 10);
 
-        ImGuiContext* context = ImGui::CreateContext();
-        (void)context;
+        (void)ImGui::CreateContext();
 
         ImGuiIO& io = ImGui::GetIO();
         io.Fonts->AddFontDefault();
@@ -165,7 +164,7 @@ namespace Engine
     {
         ImGuiImpl::NewFrame(window, deltaTime);
 
-    #if 1
+    #if !defined(NDEBUG)
         ImGui::Text("Debug information");
         ImGui::Text("FPS: %f", 1.0f / deltaTime);
 
@@ -201,10 +200,10 @@ namespace Engine
             }
 
             static char atlasPath[1024] = "../../../res/spineboy.atlas";
-            ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas\0*.atlas\0");
+            ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas | *.atlas\0*.atlas\0");
 
             static char jsonPath[1024] = "../../../res/spineboy.json";
-            ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json\0*.json\0");
+            ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json | *.json\0*.json\0");
 
             if (ImGui::Button("Change File"))
             {

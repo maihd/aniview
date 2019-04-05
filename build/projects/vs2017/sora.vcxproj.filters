@@ -30,6 +30,9 @@
     <ClInclude Include="..\..\..\3rdparty\sora\include\sora\dialog.h">
       <Filter>3rdparty\sora\include\sora</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\sora\include\sora\mouse.h">
+      <Filter>3rdparty\sora\include\sora</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\3rdparty\sora\include\sora\window.h">
       <Filter>3rdparty\sora\include\sora</Filter>
     </ClInclude>
@@ -48,6 +51,9 @@
       <Filter>3rdparty\sora\src\windows</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_dialog.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_mouse.cc">
       <Filter>3rdparty\sora\src\windows</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_widow_event.cc">

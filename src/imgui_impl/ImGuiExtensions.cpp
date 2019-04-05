@@ -31,8 +31,10 @@ namespace ImGui
             //ofn.nFilterIndex = 1;
             //ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 
-            if (OpenDialogBox::show(title, filter, NULL))
+            const char* open_file = OpenFileDialog::show(title, filter, NULL);
+            if (open_file)
             {
+                string::copy(buffer, open_file);
                 result = true;
             }
             else

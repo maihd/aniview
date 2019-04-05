@@ -151,7 +151,7 @@ namespace ImGuiImpl
         ImGuiIO& io = ImGui::GetIO();
         switch (event->type)
         {
-        case WindowEventType::MouseWheel:
+        case WindowEvent::MouseWheel:
         {
             if (event->mouse_wheel.value > 0)
                 g_MouseWheel = 1;
@@ -159,11 +159,20 @@ namespace ImGuiImpl
                 g_MouseWheel = -1;
             return true;
         }
-        case WindowEventType::MouseUp:
+
+        case WindowEvent::MouseUp:
         {
-            if (event->mouse_up.buttons & MouseButton::Left) g_MousePressed[0] = true;
-            if (event->mouse_up.buttons & MouseButton::Middle) g_MousePressed[1] = true;
-            if (event->mouse_up.buttons & MouseButton::Right) g_MousePressed[2] = true;
+            if (event->mouse_up.button == MouseButton::Left)   g_MousePressed[0] = false;
+            if (event->mouse_up.button == MouseButton::Right)  g_MousePressed[1] = false;
+            if (event->mouse_up.button == MouseButton::Middle) g_MousePressed[2] = false;
+            return true;
+        }
+
+        case WindowEvent::MouseDown:
+        {
+            if (event->mouse_up.button == MouseButton::Left)   g_MousePressed[0] = true;
+            if (event->mouse_up.button == MouseButton::Right)  g_MousePressed[1] = true;
+            if (event->mouse_up.button == MouseButton::Middle) g_MousePressed[2] = true;
             return true;
         }
 
@@ -173,8 +182,8 @@ namespace ImGuiImpl
         //    return true;
         //}
 
-        case WindowEventType::KeyUp:
-        case WindowEventType::KeyDown:
+        case WindowEvent::KeyUp:
+        case WindowEvent::KeyDown:
         {
             //int key             = event->key.keysym.sym & ~SDLK_SCANCODE_MASK;
             //io.KeysDown[key]    = (event->type == SDL_KEYDOWN);
@@ -321,25 +330,25 @@ namespace ImGuiImpl
 		attachedWindow = window;
 
         ImGuiIO& io = ImGui::GetIO();
-        //io.KeyMap[ImGuiKey_Tab] = SDLK_TAB;                     // Keyboard mapping. ImGui will use those indices to peek into the io.KeyDown[] array.
-        //io.KeyMap[ImGuiKey_LeftArrow] = SDL_SCANCODE_LEFT;
-        //io.KeyMap[ImGuiKey_RightArrow] = SDL_SCANCODE_RIGHT;
-        //io.KeyMap[ImGuiKey_UpArrow] = SDL_SCANCODE_UP;
-        //io.KeyMap[ImGuiKey_DownArrow] = SDL_SCANCODE_DOWN;
-        //io.KeyMap[ImGuiKey_PageUp] = SDL_SCANCODE_PAGEUP;
-        //io.KeyMap[ImGuiKey_PageDown] = SDL_SCANCODE_PAGEDOWN;
-        //io.KeyMap[ImGuiKey_Home] = SDL_SCANCODE_HOME;
-        //io.KeyMap[ImGuiKey_End] = SDL_SCANCODE_END;
-        //io.KeyMap[ImGuiKey_Delete] = SDLK_DELETE;
-        //io.KeyMap[ImGuiKey_Backspace] = SDLK_BACKSPACE;
-        //io.KeyMap[ImGuiKey_Enter] = SDLK_RETURN;
-        //io.KeyMap[ImGuiKey_Escape] = SDLK_ESCAPE;
-        //io.KeyMap[ImGuiKey_A] = SDLK_a;
-        //io.KeyMap[ImGuiKey_C] = SDLK_c;
-        //io.KeyMap[ImGuiKey_V] = SDLK_v;
-        //io.KeyMap[ImGuiKey_X] = SDLK_x;
-        //io.KeyMap[ImGuiKey_Y] = SDLK_y;
-        //io.KeyMap[ImGuiKey_Z] = SDLK_z;
+        io.KeyMap[ImGuiKey_Tab] = 1;                     // Keyboard mapping. ImGui will use those indices to peek into the io.KeyDown[] array.
+        io.KeyMap[ImGuiKey_LeftArrow] = 2;
+        io.KeyMap[ImGuiKey_RightArrow] = 3;
+        io.KeyMap[ImGuiKey_UpArrow] = 4;
+        io.KeyMap[ImGuiKey_DownArrow] = 5;
+        io.KeyMap[ImGuiKey_PageUp] = 6;
+        io.KeyMap[ImGuiKey_PageDown] = 7;
+        io.KeyMap[ImGuiKey_Home] = 8;
+        io.KeyMap[ImGuiKey_End] = 9;
+        io.KeyMap[ImGuiKey_Delete] = 10;
+        io.KeyMap[ImGuiKey_Backspace] = 11;
+        io.KeyMap[ImGuiKey_Enter] = 12;
+        io.KeyMap[ImGuiKey_Escape] = 13;
+        io.KeyMap[ImGuiKey_A] = 14;
+        io.KeyMap[ImGuiKey_C] = 15;
+        io.KeyMap[ImGuiKey_V] = 16;
+        io.KeyMap[ImGuiKey_X] = 17;
+        io.KeyMap[ImGuiKey_Y] = 18;
+        io.KeyMap[ImGuiKey_Z] = 19;
 
         io.RenderDrawListsFn  = NULL;
         io.ClipboardUserData  = NULL;
@@ -375,10 +384,10 @@ namespace ImGuiImpl
         int display_w, display_h;
         //SDL_GetWindowSize(window, &w, &h);
         //SDL_GL_GetDrawableSize(window, &display_w, &display_h);
-        w = window->width;
-        h = window->height;
-        display_w = window->width;
-        display_h = window->height;
+        w = window->content_width;
+        h = window->content_height;
+        display_w = window->content_width;
+        display_h = window->content_height;
         io.DisplaySize = ImVec2((float)w, (float)h);
         io.DisplayFramebufferScale = ImVec2(w > 0 ? ((float)display_w / w) : 0, h > 0 ? ((float)display_h / h) : 0);
 
@@ -387,17 +396,22 @@ namespace ImGuiImpl
 
         // Setup inputs
         // (we already got mouse wheel, keyboard keys & characters from SDL_PollEvent())
-        int mx, my;
-        //u32 mouseMask = SDL_GetMouseState(&mx, &my);
-        //if (SDL_GetWindowFlags(window) & SDL_WINDOW_MOUSE_FOCUS)
-        //    io.MousePos = ImVec2((float)mx, (float)my);   // Mouse position, in pixels (set to -1,-1 if no mouse / on another screen, etc.)
-        //else
-        //    io.MousePos = ImVec2(-FLT_MAX, -FLT_MAX);
+        float mx, my;
+        Flags mouseMask = WindowEvent::get_mouse_state(&mx, &my);
+        if (window->is_focus())
+            io.MousePos = ImVec2(mx, my);   // Mouse position, in pixels (set to -1,-1 if no mouse / on another screen, etc.)
+        else
+            io.MousePos = ImVec2(-FLT_MAX, -FLT_MAX);
 
-        //io.MouseDown[0] = g_MousePressed[0] || (mouseMask & SDL_BUTTON(SDL_BUTTON_LEFT)) != 0;		// If a mouse press event came, always pass it as "mouse held this frame", so we don't miss click-release events that are shorter than 1 frame.
-        //io.MouseDown[1] = g_MousePressed[1] || (mouseMask & SDL_BUTTON(SDL_BUTTON_RIGHT)) != 0;
-        //io.MouseDown[2] = g_MousePressed[2] || (mouseMask & SDL_BUTTON(SDL_BUTTON_MIDDLE)) != 0;
-        //g_MousePressed[0] = g_MousePressed[1] = g_MousePressed[2] = false;
+        io.MouseDown[0] = g_MousePressed[0] || (mouseMask & MouseButton::Left) != 0;		// If a mouse press event came, always pass it as "mouse held this frame", so we don't miss click-release events that are shorter than 1 frame.
+        io.MouseDown[1] = g_MousePressed[1] || (mouseMask & MouseButton::Right) != 0;
+        io.MouseDown[2] = g_MousePressed[2] || (mouseMask & MouseButton::Middle) != 0;
+        g_MousePressed[0] = g_MousePressed[1] = g_MousePressed[2] = false;
+
+        if (io.MouseDown[0])
+        {
+            io.MouseDown[0] = true;
+        }
 
         io.MouseWheel = g_MouseWheel;
         g_MouseWheel = 0.0f;

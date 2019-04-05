@@ -14,11 +14,11 @@
   riku_stream.cc
   riku_string.cc
   riku_thread.cc
+d:\aniview\3rdparty\riku\src\riku_string.cc(131): warning C4804: '-': unsafe use of type 'bool' in operation
+d:\aniview\3rdparty\riku\src\riku_string.cc(147): warning C4804: '-': unsafe use of type 'bool' in operation
   riku_zlib.cc
   riku_windows_fiber.cc
   riku_windows_fs.cc
-d:\aniview\3rdparty\riku\src\riku_string.cc(131): warning C4804: '-': unsafe use of type 'bool' in operation
-d:\aniview\3rdparty\riku\src\riku_string.cc(147): warning C4804: '-': unsafe use of type 'bool' in operation
 d:\aniview\3rdparty\riku\src\riku_net.cc(148): warning C4701: potentially uninitialized local variable 'sockfd' used
 d:\aniview\3rdparty\riku\src\riku_net.cc(211): warning C4701: potentially uninitialized local variable 'sockfd' used
 d:\aniview\3rdparty\riku\src\windows\riku_windows_fiber.cc(29): warning C4458: declaration of 'func' hides class member
@@ -27,10 +27,6 @@ d:\aniview\3rdparty\riku\src\windows\riku_windows_fiber.cc(29): warning C4458: d
   compress.c
   crc32.c
   deflate.c
-  gzclose.c
-  gzlib.c
-  gzread.c
-  gzwrite.c
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\compress.c(23): warning C4131: 'compress2': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\compress.c(69): warning C4131: 'compress': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\compress.c(82): warning C4131: 'compressBound': uses old-style declarator
@@ -66,7 +62,6 @@ d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(653): warning C4131: 'de
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(717): warning C4131: 'putShortMSB': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(731): warning C4131: 'flush_pending': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(764): warning C4131: 'deflate': uses old-style declarator
-  infback.c
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1077): warning C4131: 'deflateEnd': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1103): warning C4131: 'deflateCopy': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1165): warning C4131: 'read_buf': uses old-style declarator
@@ -74,7 +69,6 @@ d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1195): warning C4131: 'l
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1237): warning C4131: 'longest_match': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1483): warning C4131: 'fill_window': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1495): warning C4127: conditional expression is constant
-  inffast.c
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1644): warning C4131: 'deflate_stored': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1693): warning C4244: '=': conversion from 'unsigned int' to 'Bytef', possible loss of data
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1694): warning C4244: '=': conversion from 'unsigned int' to 'Bytef', possible loss of data
@@ -84,87 +78,90 @@ d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1825): warning C4131: 'd
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(1927): warning C4131: 'deflate_slow': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(2058): warning C4131: 'deflate_rle': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\deflate.c(2131): warning C4131: 'deflate_huff': uses old-style declarator
+  gzclose.c
+  gzlib.c
+  gzread.c
+  gzwrite.c
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzclose.c(12): warning C4131: 'gzclose': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(76): warning C4131: 'gz_reset': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(18): warning C4131: 'gz_init': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(29): warning C4131: 'inflateBackInit_': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(92): warning C4131: 'gz_open': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(83): warning C4131: 'fixedtables': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(74): warning C4131: 'gz_comp': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(245): warning C4996: 'open': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _open. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(514): note: see declaration of 'open'
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(22): warning C4131: 'gz_load': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(89): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _write. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(556): note: see declaration of 'write'
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(271): warning C4131: 'gzopen': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(110): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _write. See online help for details.
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(35): warning C4996: 'read': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _read. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(556): note: see declaration of 'write'
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(521): note: see declaration of 'read'
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(279): warning C4131: 'gzopen64': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(146): warning C4131: 'gz_zero': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(57): warning C4131: 'gz_avail': uses old-style declarator
-  inflate.c
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(287): warning C4131: 'gzdopen': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(179): warning C4131: 'gz_write': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(308): warning C4131: 'gzopen_w': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(92): warning C4131: 'gz_look': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(317): warning C4131: 'gzbuffer': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(247): warning C4131: 'gzwrite': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(344): warning C4131: 'gzrewind': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(275): warning C4131: 'gzfwrite': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(367): warning C4131: 'gzseek64': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(305): warning C4131: 'gzputc': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(251): warning C4131: 'inflateBack': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(176): warning C4131: 'gz_decomp': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(444): warning C4131: 'gzseek': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(456): warning C4131: 'gztell64': uses old-style declarator
-  inftrees.c
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(353): warning C4131: 'gzputs': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(230): warning C4131: 'gz_fetch': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(473): warning C4131: 'gztell': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(483): warning C4131: 'gzoffset64': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(506): warning C4131: 'gzoffset': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(554): warning C4131: 'gzflush': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(260): warning C4131: 'gz_skip': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(516): warning C4131: 'gzeof': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(586): warning C4131: 'gzsetparams': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(295): warning C4131: 'gz_read': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(533): warning C4131: 'gzerror': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(317): warning C4245: '=': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(554): warning C4131: 'gzclearerr': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(628): warning C4131: 'gzclose_w': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(580): warning C4131: 'gz_error': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(661): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _close. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(457): note: see declaration of 'close'
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(376): warning C4131: 'gzread': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(412): warning C4131: 'gzfread': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(448): warning C4131: 'gzgetc': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.c(51): warning C4131: 'inflate_fast': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(477): warning C4131: 'gzgetc_': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(632): warning C4131: 'inflateBackEnd': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(484): warning C4131: 'gzungetc': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(544): warning C4131: 'gzgets': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(608): warning C4131: 'gzdirect': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(628): warning C4131: 'gzclose_r': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzread.c(651): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _close. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(457): note: see declaration of 'close'
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(76): warning C4131: 'gz_reset': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(92): warning C4131: 'gz_open': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(245): warning C4996: 'open': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _open. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(514): note: see declaration of 'open'
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(271): warning C4131: 'gzopen': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(279): warning C4131: 'gzopen64': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(287): warning C4131: 'gzdopen': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(308): warning C4131: 'gzopen_w': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(317): warning C4131: 'gzbuffer': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(344): warning C4131: 'gzrewind': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(367): warning C4131: 'gzseek64': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(444): warning C4131: 'gzseek': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(456): warning C4131: 'gztell64': uses old-style declarator
+  infback.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(473): warning C4131: 'gztell': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(483): warning C4131: 'gzoffset64': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(506): warning C4131: 'gzoffset': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(516): warning C4131: 'gzeof': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(533): warning C4131: 'gzerror': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(554): warning C4131: 'gzclearerr': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzlib.c(580): warning C4131: 'gz_error': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(18): warning C4131: 'gz_init': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(74): warning C4131: 'gz_comp': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(89): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _write. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(556): note: see declaration of 'write'
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(110): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _write. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(556): note: see declaration of 'write'
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(146): warning C4131: 'gz_zero': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(179): warning C4131: 'gz_write': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(247): warning C4131: 'gzwrite': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(275): warning C4131: 'gzfwrite': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(305): warning C4131: 'gzputc': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(353): warning C4131: 'gzputs': uses old-style declarator
+  inffast.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(554): warning C4131: 'gzflush': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(586): warning C4131: 'gzsetparams': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(628): warning C4131: 'gzclose_w': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\gzwrite.c(661): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _close. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(457): note: see declaration of 'close'
+  inflate.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(29): warning C4131: 'inflateBackInit_': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(83): warning C4131: 'fixedtables': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(251): warning C4131: 'inflateBack': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\infback.c(632): warning C4131: 'inflateBackEnd': uses old-style declarator
+  inftrees.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inffast.c(51): warning C4131: 'inflate_fast': uses old-style declarator
   trees.c
-  uncompr.c
-  zutil.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.c(33): warning C4131: 'inflate_table': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(106): warning C4131: 'inflateStateCheck': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(120): warning C4131: 'inflateResetKeep': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(145): warning C4131: 'inflateReset': uses old-style declarator
+  uncompr.c
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(158): warning C4131: 'inflateReset2': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(196): warning C4131: 'inflateInit2_': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(240): warning C4131: 'inflateInit_': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(248): warning C4131: 'inflatePrime': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(279): warning C4131: 'fixedtables': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c(28): warning C4131: 'uncompress2': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c(87): warning C4131: 'uncompress': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(397): warning C4131: 'updatewindow': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(623): warning C4131: 'inflate': uses old-style declarator
-d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inftrees.c(33): warning C4131: 'inflate_table': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1278): warning C4131: 'inflateEnd': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1292): warning C4131: 'inflateGetDictionary': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1315): warning C4131: 'inflateSetDictionary': uses old-style declarator
@@ -177,6 +174,9 @@ d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1509): warning C4131: 'i
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1527): warning C4131: 'inflateValidate': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1542): warning C4131: 'inflateMark': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\inflate.c(1555): warning C4131: 'inflateCodesUsed': uses old-style declarator
+  zutil.c
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c(28): warning C4131: 'uncompress2': uses old-style declarator
+d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\uncompr.c(87): warning C4131: 'uncompress': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\trees.c(380): warning C4131: '_tr_init': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\trees.c(408): warning C4131: 'init_block': uses old-style declarator
 d:\aniview\3rdparty\riku\3rdparty\zlib-1.2.11\trees.c(452): warning C4131: 'pqdownheap': uses old-style declarator

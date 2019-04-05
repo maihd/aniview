@@ -133,6 +133,26 @@ void _spAtlasPage_createTexture(spAtlasPage* self, const char* path)
     GLenum format, internalFormat;
     switch (self->format)
     {
+    case SP_ATLAS_ALPHA:
+        format         = GL_ALPHA;
+        internalFormat = GL_ALPHA;
+        break;
+
+    case SP_ATLAS_INTENSITY:
+        format         = GL_INTENSITY;
+        internalFormat = GL_INTENSITY;
+        break;
+
+    case SP_ATLAS_LUMINANCE_ALPHA:
+        format         = GL_LUMINANCE;
+        internalFormat = GL_LUMINANCE;
+        break;
+
+    case SP_ATLAS_RGB565:
+        format         = GL_RGB565;
+        internalFormat = GL_RGBA;
+        break;
+
     case SP_ATLAS_RGB888:
         format         = GL_RGB;
         internalFormat = GL_RGBA;

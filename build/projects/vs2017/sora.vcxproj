@@ -242,6 +242,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\3rdparty\sora\include\sora\core.h" />
     <ClInclude Include="..\..\..\3rdparty\sora\include\sora\dialog.h" />
+    <ClInclude Include="..\..\..\3rdparty\sora\include\sora\mouse.h" />
     <ClInclude Include="..\..\..\3rdparty\sora\include\sora\window.h" />
     <ClInclude Include="..\..\..\3rdparty\sora\src\glew_private\wglew.h" />
     <ClInclude Include="..\..\..\3rdparty\sora\src\windows\window_private.h" />
@@ -252,6 +253,8 @@
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_core.cc">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_dialog.cc">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_mouse.cc">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_widow_event.cc">
     </ClCompile>

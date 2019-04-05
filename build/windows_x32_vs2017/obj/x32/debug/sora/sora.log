@@ -1,7 +1,13 @@
 ﻿  sora_windows_core.cc
   sora_windows_dialog.cc
+  sora_windows_mouse.cc
+  sora_windows_widow_event.cc
+d:\aniview\3rdparty\sora\src\windows\sora_windows_widow_event.cc(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\aniview\3rdparty\sora\src\windows\sora_windows_widow_event.cc(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\aniview\3rdparty\sora\src\windows\sora_windows_widow_event.cc(119): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\aniview\3rdparty\sora\src\windows\sora_windows_widow_event.cc(136): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\aniview\3rdparty\sora\src\windows\sora_windows_widow_event.cc(150): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   sora_windows_window.cc
   sora_windows_window_opengl.cc
-d:\aniview\3rdparty\sora\src\windows\sora_windows_dialog.cc(18): warning C4100: 'lParam': unreferenced formal parameter
 LINK : warning LNK4044: unrecognized option '/WHOLEARCHIVE'; ignored
   sora.vcxproj -> D:\aniview\build\projects\vs2017\..\..\windows_x32_vs2017\bin\sora.debug.lib
