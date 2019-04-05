@@ -50,6 +50,9 @@
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_dialog.cc">
       <Filter>3rdparty\sora\src\windows</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_widow_event.cc">
+      <Filter>3rdparty\sora\src\windows</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_window.cc">
       <Filter>3rdparty\sora\src\windows</Filter>
     </ClCompile>

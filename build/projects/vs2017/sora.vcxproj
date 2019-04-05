@@ -253,6 +253,8 @@
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_dialog.cc">
     </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_widow_event.cc">
+    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_window.cc">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\sora\src\windows\sora_windows_window_opengl.cc">
