@@ -14,7 +14,7 @@ namespace ImGui
 		bool result = false;
         
         char buttonLabel[1024];
-        string::format(buttonLabel, ICON_FA_SEARCH "##%s", title);
+        string::format(buttonLabel, sizeof(buttonLabel), ICON_FA_SEARCH "##%s", title);
         if (ImGui::Button(buttonLabel, ImVec2(30.0f, 0.0f)))
 		{
 			//OPENFILENAMEA ofn;
