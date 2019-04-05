@@ -9,7 +9,7 @@
 
 namespace ImGui
 {
-	bool FileDialog(const char* title, char* buffer, int length, const char* filter)
+	bool FileInput(const char* title, char* buffer, int length, const char* filter)
 	{
 		bool result = false;
         
@@ -19,8 +19,6 @@ namespace ImGui
 		{
 			//OPENFILENAMEA ofn;
             //HWND hwnd = ImGuiImpl::GetAttachHWND();
-
-            buffer[0] = 0;
 
             //ZeroMemory(&ofn, sizeof(ofn));
             //ofn.lStructSize = sizeof(ofn);
@@ -32,9 +30,9 @@ namespace ImGui
             //ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 
             const char* open_file = OpenFileDialog::show(title, filter, NULL);
-            if (open_file)
+            if (!string::is_empty(open_file))
             {
-                string::copy(buffer, open_file);
+                string::copy(buffer, open_file, length);
                 result = true;
             }
             else

@@ -5,7 +5,7 @@
 
 namespace ImGui
 {
-	IMGUI_API bool FileDialog(const char* title, char* buffer, int length, const char* filter = "All\0*.*\0");
+	IMGUI_API bool FileInput(const char* title, char* buffer, int length, const char* filter = "All | *.*\0*.*\0");
 }
 
 #endif /* __IMGUI_EXTENSIONS_H__ */

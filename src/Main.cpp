@@ -133,7 +133,7 @@ namespace Engine
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        projMatrix = float4x4::ortho(-width * 0.5f, width * 0.5f, 0, height, -10, 10);
+        projMatrix = float4x4::ortho(-width, width, -height, height, -10, 10);
 
         (void)ImGui::CreateContext();
 
@@ -200,10 +200,14 @@ namespace Engine
             }
 
             static char atlasPath[1024] = "../../../res/spineboy.atlas";
-            ImGui::FileDialog("Atlas path", atlasPath, sizeof(atlasPath), "Atlas | *.atlas\0*.atlas\0");
+            ImGui::FileInput("Atlas path", atlasPath, sizeof(atlasPath), "Atlas | *.atlas\0*.atlas\0");
 
             static char jsonPath[1024] = "../../../res/spineboy.json";
-            ImGui::FileDialog("Json path", jsonPath, sizeof(jsonPath), "Json | *.json\0*.json\0");
+            ImGui::FileInput("Json path", jsonPath, sizeof(jsonPath), "Json | *.json\0*.json\0");
+            {
+                //int last_index = string::last_index_of(jsonPath, '.');
+                //if (last_index && strn)
+            }
 
             if (ImGui::Button("Change File"))
             {
